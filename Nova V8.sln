@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "NovaV8\UI.csproj", "{42BE9F51-C484-4FBF-955B-5CECB002D5CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42BE9F51-C484-4FBF-955B-5CECB002D5CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42BE9F51-C484-4FBF-955B-5CECB002D5CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42BE9F51-C484-4FBF-955B-5CECB002D5CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42BE9F51-C484-4FBF-955B-5CECB002D5CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,17 @@
+C:\Users\niiku\Documents\Visual Studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\niiku\Documents\Visual Studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\niiku\Documents\Visual Studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\niiku\Documents\Visual Studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\UI.csprojResolveAssemblyReference.cache
+C:\Users\niiku\Documents\Visual Studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\NovaV8.Form1.resources
+C:\Users\niiku\Documents\Visual Studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\NovaV8.Profil.resources
+C:\Users\niiku\Documents\Visual Studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\NovaV8.ProfilForm.resources
+C:\Users\niiku\Documents\Visual Studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\NovaV8.Reports.resources
+C:\Users\niiku\Documents\Visual Studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\NovaV8.LoginForm.resources
+C:\Users\niiku\Documents\Visual Studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\NovaV8.Properties.Resources.resources
+C:\Users\niiku\Documents\Visual Studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\NovaV8.ReportForm.resources
+C:\Users\niiku\Documents\Visual Studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\UI.csproj.GenerateResource.Cache
+C:\Users\niiku\Documents\Visual Studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\niiku\Documents\Visual Studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\niiku\Documents\Visual Studio 2012\Projects\NovaV8\NovaV8\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\niiku\Documents\Visual Studio 2012\Projects\NovaV8\NovaV8\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\niiku\Documents\Visual Studio 2012\Projects\NovaV8\NovaV8\obj\Debug\WindowsFormsApplication1.pdb
