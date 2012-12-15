@@ -22,5 +22,13 @@ namespace NovaV8
         {
             return ReportService.FindReportsByProject(this);
         }
+
+        public void addReport(Report report)
+        {
+
+            Simplifier.insertOrUpdate(this);
+            report.project = this.id;
+            Simplifier.insertOrUpdate(report);
+        }   
     }
 }

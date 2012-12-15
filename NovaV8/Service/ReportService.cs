@@ -17,6 +17,11 @@ namespace NovaV8
         {
             return Simplifier.FindAll<Report>();
         }
+
+        internal static List<Report> FindReportsByUser(User user)
+        {
+            return Simplifier.Query<Report>("SELECT * FROM REPORT WHERE user =" + user.id + ";");
+        }
     }
    
 }

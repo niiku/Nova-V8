@@ -15,5 +15,12 @@ namespace NovaV8
         {
             return ProjectService.FindProjectsByCustomer(this);
         }
+
+        public void addProject(Project project)
+        {
+            Simplifier.insertOrUpdate(this);
+            project.customer = this.id;
+            Simplifier.insertOrUpdate(project);
+        }
     }
 }

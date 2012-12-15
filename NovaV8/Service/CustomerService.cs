@@ -21,5 +21,6 @@ namespace NovaV8
         {
             return Simplifier.FindAll<Customer>();
         }
+
     }
 }

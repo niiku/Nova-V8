@@ -6,15 +6,20 @@ namespace NovaV8
 {
     public class User
     {
-        int id { get; set; }
-        string name { get; set; }
-        string password { get; set; }
-        int profile { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public string password { get; set; }
+        public int profile { get; set; }
 
         public Profile Profile()
         {
             return Simplifier.findById<Profile>(profile);
 
+        }
+
+        public List<Report> Reports()
+        {
+            return ReportService.FindReportsByUser(this);
         }
     }
 }
