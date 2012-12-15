@@ -97,7 +97,7 @@ namespace NovaV8
         /// <typeparam name="T">Represents the modeltype</typeparam>
         /// <param name="query">Querystring</param>
         /// <returns>Typed list of each dataset found</returns>
-        private static List<T> Query<T>(String query)
+        public static List<T> Query<T>(String query)
         {
             MySqlDataReader reader = null;
             //Check if connection is already open
