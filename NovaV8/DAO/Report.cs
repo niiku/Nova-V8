@@ -12,14 +12,14 @@ namespace NovaV8
         int user { get; set; }
         int task { get; set; }
 
-        public Task Aufgabe()
+        public Task Task()
         {
-            throw new NotImplementedException();
+            return Simplifier.findById<Task>(task);
         }
 
-        public User Benutzer()
+        public User User()
         {
-            throw new NotImplementedException();
+            return Simplifier.findById<User>(user);
         }
     }
 }

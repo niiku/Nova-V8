@@ -10,9 +10,13 @@ namespace NovaV8
         public int id { get; set; }
         public string name { get; set; }
 
-        public void Komponenten()
+        public List<Component> Components()
         {
-            throw new NotImplementedException();
+            return Simplifier.Query<Component>("SELECT c.* FROM Permission as p" +
+"JOIN component as c on p.component = c.id" +
+"JOIN profile as pr on p.profile = pr.id" +
+"WHERE pr.id = " + id + ";");
+
         }
     }
 }

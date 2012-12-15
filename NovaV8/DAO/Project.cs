@@ -13,14 +13,14 @@ namespace NovaV8
         public int active { get; set; }
         public string name { get; set; }
 
-        public Customer Kunde()
+        public Customer Customer()
         {
-            throw new NotImplementedException();
+            return Simplifier.findById<Customer>(customer);
         }
 
-        public List<Task> Aufgaben()
+        public List<Report> Reports()
         {
-            throw new NotImplementedException();
+            return ReportService.FindReportsByProject(this);
         }
     }
 }

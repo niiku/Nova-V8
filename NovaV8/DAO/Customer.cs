@@ -11,9 +11,9 @@ namespace NovaV8
         public string name { get; set; }
         public string description { get; set; }
 
-        public List<Project> Projekte()
+        public List<Project> Projects()
         {
-            throw new NotImplementedException();
+            return ProjectService.FindProjectsByCustomer(this);
         }
     }
 }

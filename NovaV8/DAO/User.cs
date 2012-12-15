@@ -9,7 +9,12 @@ namespace NovaV8
         int id { get; set; }
         string name { get; set; }
         string password { get; set; }
+        int profile { get; set; }
 
+        public Profile Profile()
+        {
+            return Simplifier.findById<Profile>(profile);
 
+        }
     }
 }

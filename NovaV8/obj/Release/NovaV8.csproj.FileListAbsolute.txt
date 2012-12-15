@@ -1,0 +1,13 @@
+C:\Users\niiku\Documents\Visual Studio 2012\Projects\NovaV8\NovaV8\bin\Release\WindowsFormsApplication1.exe.config
+C:\Users\niiku\Documents\Visual Studio 2012\Projects\NovaV8\NovaV8\bin\Release\WindowsFormsApplication1.exe
+C:\Users\niiku\Documents\Visual Studio 2012\Projects\NovaV8\NovaV8\bin\Release\WindowsFormsApplication1.pdb
+C:\Users\niiku\Documents\Visual Studio 2012\Projects\NovaV8\NovaV8\obj\Release\NovaV8.Form1.resources
+C:\Users\niiku\Documents\Visual Studio 2012\Projects\NovaV8\NovaV8\obj\Release\NovaV8.Profil.resources
+C:\Users\niiku\Documents\Visual Studio 2012\Projects\NovaV8\NovaV8\obj\Release\NovaV8.ProfilForm.resources
+C:\Users\niiku\Documents\Visual Studio 2012\Projects\NovaV8\NovaV8\obj\Release\NovaV8.Reports.resources
+C:\Users\niiku\Documents\Visual Studio 2012\Projects\NovaV8\NovaV8\obj\Release\NovaV8.LoginForm.resources
+C:\Users\niiku\Documents\Visual Studio 2012\Projects\NovaV8\NovaV8\obj\Release\NovaV8.Properties.Resources.resources
+C:\Users\niiku\Documents\Visual Studio 2012\Projects\NovaV8\NovaV8\obj\Release\NovaV8.ReportForm.resources
+C:\Users\niiku\Documents\Visual Studio 2012\Projects\NovaV8\NovaV8\obj\Release\NovaV8.csproj.GenerateResource.Cache
+C:\Users\niiku\Documents\Visual Studio 2012\Projects\NovaV8\NovaV8\obj\Release\WindowsFormsApplication1.exe
+C:\Users\niiku\Documents\Visual Studio 2012\Projects\NovaV8\NovaV8\obj\Release\WindowsFormsApplication1.pdb

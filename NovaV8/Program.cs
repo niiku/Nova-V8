@@ -17,7 +17,7 @@ namespace NovaV8
             //Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new ProfilForm());
-            Console.WriteLine(Simplifier.findById<Project>(1).name);
+            Console.WriteLine(Simplifier.findById<Customer>(1).Projects().ElementAt(0).name);
         }
     }
 }
