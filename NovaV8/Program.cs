@@ -14,9 +14,10 @@ namespace NovaV8
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ProfilForm());
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new ProfilForm());
+            Console.WriteLine(Simplifier.findById<Project>(1).name);
         }
     }
 }

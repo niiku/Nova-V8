@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Text;
 
 
-namespace NovaV8.DAO{
+namespace NovaV8
+{
     public class Customer
     {
-        int Id { get; set; }
-        string Name { get; set; }
-        string Beschreibung { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public string description { get; set; }
 
         public List<Project> Projekte()
         {

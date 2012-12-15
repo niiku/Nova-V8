@@ -2,15 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace NovaV8.DAO
+namespace NovaV8
 {
     public class Report
     {
-        int Id { get; set; }
-        DateTime Datum { get; set; }
-        float Aufwand { get; set; }
-        int BenutzerId { get; set; }
-        int AufgabenId { get; set; }
+        public int id { get; set; }
+        public DateTime date { get; set; }
+        public int expenditure { get; set; }
+        int user { get; set; }
+        int task { get; set; }
 
         public Task Aufgabe()
         {

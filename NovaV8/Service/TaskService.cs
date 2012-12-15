@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using NovaV8.DAO;
+namespace NovaV8
 
-namespace NovaV8.Dienste
 {
 
 }

@@ -2,16 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace NovaV8.DAO
+namespace NovaV8
 {
     public class Project
     {
-        int Id { get; set; }
-        int KundenId;
-        string Nummer { get; set; }
-        DateTime Beginn { get; set; }
-        int Aktiv { get; set; }
-        string Name { get; set; }
+        public int id { get; set; }
+        public int customer;
+        public string number { get; set; }
+        public DateTime begin { get; set; }
+        public int active { get; set; }
+        public string name { get; set; }
 
         public Customer Kunde()
         {
