@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using NovaV8.Modelle;
-namespace NovaV8.Dienste
+using NovaV8.DAO;
+namespace NovaV8.Service
 {
     public class CustomerService
 

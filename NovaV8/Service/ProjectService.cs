@@ -1,15 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using NovaV8.Modelle;
+using NovaV8.DAO;
 
-namespace NovaV8.Dienste
+namespace NovaV8.Service
 {
     public class ProjectService
     {
-        public static List<Project> FindeProjekteVonKunde(Customer Wer)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }

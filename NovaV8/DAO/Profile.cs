@@ -2,7 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace NovaV8.Modelle
+
+namespace NovaV8.DAO
 {
     public class Profile
     {

@@ -1,20 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using NovaV8.Modelle;
+using NovaV8.DAO;
 
-namespace NovaV8.Dienste
+namespace NovaV8.Service
 {
-    public class ReportService
-    {
-        public void Erstelle(Report Welchen)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Bearbeite(Report Welchen)
-        {
-            throw new NotImplementedException();
-        }
-    }
+   
 }
