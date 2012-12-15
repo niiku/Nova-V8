@@ -4,19 +4,20 @@ using System.Text;
 
 namespace NovaV8.Modelle
 {
-    public class Aufgabe
+    public class Report
     {
         int Id { get; set; }
-        int ProjektId;
-        string Name { get; set; }
-        string Beschreibung { get; set; }
+        DateTime Datum { get; set; }
+        float Aufwand { get; set; }
+        int BenutzerId { get; set; }
+        int AufgabenId { get; set; }
 
-        public Projekt Projekt()
+        public Task Aufgabe()
         {
             throw new NotImplementedException();
         }
 
-        public List<Rapport> Rapporte()
+        public User Benutzer()
         {
             throw new NotImplementedException();
         }

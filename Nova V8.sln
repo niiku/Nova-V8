@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "NovaV8\UI.csproj", "{42BE9F51-C484-4FBF-955B-5CECB002D5CA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NovaV8", "NovaV8\NovaV8.csproj", "{42BE9F51-C484-4FBF-955B-5CECB002D5CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
