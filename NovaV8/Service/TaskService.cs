@@ -13,9 +13,5 @@ namespace NovaV8
         {
             return Simplifier.findById<Task>(id);
         }
-        public static List<Task> FindAll()
-        {
-            return Simplifier.FindAll<Task>();
-        }
     }
 }

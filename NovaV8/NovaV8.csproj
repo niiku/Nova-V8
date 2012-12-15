@@ -70,9 +70,9 @@
     <Compile Include="Database\ResultNotFoundException.cs" />
     <Compile Include="Database\Simplifier.cs" />
     <Compile Include="Database\TypeExtensions.cs" />
+    <Compile Include="Service\ProfileService.cs" />
     <Compile Include="Service\TaskService.cs" />
     <Compile Include="Service\UserService.cs" />
-    <Compile Include="Service\PermissionService.cs" />
     <Compile Include="Service\CustomerService.cs" />
     <Compile Include="Service\ProjectService.cs" />
     <Compile Include="Service\ReportService.cs" />

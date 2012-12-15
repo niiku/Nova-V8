@@ -99,6 +99,7 @@ namespace NovaV8
         /// <returns>Typed list of each dataset found</returns>
         public static List<T> Query<T>(String query)
         {
+            Console.WriteLine(query);
             MySqlDataReader reader = null;
             //Check if connection is already open
             if (DBConnector.Instance.GetConnection().State != System.Data.ConnectionState.Open)

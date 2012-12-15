@@ -7,7 +7,7 @@ namespace NovaV8
     {
         public static List<Project> FindProjectsByCustomer(Customer customer)
         {
-                return Simplifier.Query<Project>("SELECProject * FROM PROJECT WHERE CUSTOMER = "+customer.id+";");
+                return Simplifier.Query<Project>("SELECT * FROM PROJECT WHERE CUSTOMER = "+customer.id+";");
         }
 
         public static Project FindById<Project>(long id)
