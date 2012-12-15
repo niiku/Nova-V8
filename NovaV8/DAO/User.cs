@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace NovaV8
@@ -8,7 +9,7 @@ namespace NovaV8
     {
         public int id { get; set; }
         public string name { get; set; }
-        public string password { get; set; }
+        public string password { set; private get; }
         public int profile { get; set; }
 
         public Profile Profile()
@@ -22,6 +23,24 @@ namespace NovaV8
             return ReportService.FindReportsByUser(this);
         }
 
+        public bool hasPermissionForComponent(long id)
+        {
+            foreach (Component c in Profile().Components())
+            {
+                if (c.id == id)
+                {
+                    return true;
+                }
+            }
+            return false;
+
+        }
+
+
+        public bool rightPassword(string password)
+        {
+            return this.password.Equals(Utils.GetMD5Hash(password));
+        }
 
     }
 }

@@ -14,5 +14,13 @@ namespace NovaV8
         {
             return Simplifier.FindAll<User>();
         }
+
+        public static User FindUserByName(string name) {
+            List<User> users = Simplifier.Query<User>("SELECT * FROM USER WHERE NAME LIKE '"+name+"'");
+            if(users.Count > 0) {
+                return users[0];
+            }
+            return null;
+        }
     }
 }
