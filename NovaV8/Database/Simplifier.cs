@@ -135,14 +135,7 @@ namespace NovaV8
                 DBConnector.Instance.GetConnection().Close();
             }
             //Check if there is a result
-            if (resultSet.Count > 0)
-            {
-                return resultSet;
-            }
-            else
-            {
-                return default(List<T>);
-            }
+            return resultSet;
         }
 
         /// <summary>
