@@ -29,6 +29,11 @@ namespace NovaV8
             Simplifier.insertOrUpdate(this);
             report.project = this.id;
             Simplifier.insertOrUpdate(report);
-        }   
+        }
+
+        public override string ToString()
+        {
+            return name;
+        }
     }
 }

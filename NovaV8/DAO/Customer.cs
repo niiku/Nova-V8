@@ -22,5 +22,10 @@ namespace NovaV8
             project.customer = this.id;
             Simplifier.insertOrUpdate(project);
         }
+
+        public override String ToString()
+        {
+            return name;
+        }
     }
 }

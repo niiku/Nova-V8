@@ -14,14 +14,9 @@ namespace NovaV8
         [STAThread]
         static void Main()
         {
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new ProfilForm());
-            //Console.WriteLine(Simplifier.findById<Customer>(1).Projects().ElementAt(0).Reports().ElementAt(0).User().Profile().Components().Count);
-            String inputPassword = "novav8";
-            
-            User nik = (UserService.FindUserByName("philipsn"));
-            Console.WriteLine(nik.rightPassword(inputPassword));
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new LoginForm());
         }
     }
 }
