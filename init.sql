@@ -30,7 +30,7 @@ CREATE  TABLE IF NOT EXISTS `novav8`.`Project` (
   `number` VARCHAR(12) CHARACTER SET 'utf8' COLLATE 'utf8_general_ci' NOT NULL ,
   `name` VARCHAR(200) NOT NULL ,
   `customer` INT(10) NULL ,
-  `begin` DATE NULL ,
+  `begin` VARCHAR(30) NULL ,
   `active` TINYINT(1) NOT NULL ,
   PRIMARY KEY (`id`) ,
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) ,
@@ -107,7 +107,7 @@ DROP TABLE IF EXISTS `novav8`.`Report` ;
 
 CREATE  TABLE IF NOT EXISTS `novav8`.`Report` (
   `id` INT(10) NOT NULL AUTO_INCREMENT ,
-  `date` DATE NOT NULL ,
+  `date` VARCHAR(30) NOT NULL ,
   `task` INT(10) NOT NULL ,
   `description` VARCHAR(200) NULL ,
   `project` INT(10) NULL ,
