@@ -19,30 +19,10 @@ namespace NovaV8
 
         private void Reports_Load(object sender, EventArgs e)
         {
-            DataGridViewTextBoxColumn date = new DataGridViewTextBoxColumn();
-            date.DataPropertyName = "Date";
-            date.HeaderText = "Date";
-            DataGridViewTextBoxColumn expendure = new DataGridViewTextBoxColumn();
-            expendure.DataPropertyName = "Expendure";
-            expendure.HeaderText = "Expendure";
-            DataGridViewTextBoxColumn user = new DataGridViewTextBoxColumn();
-            user.DataPropertyName = "User";
-            user.HeaderText = "User";
-            DataGridViewTextBoxColumn task = new DataGridViewTextBoxColumn();
-            task.DataPropertyName = "Task";
-            task.HeaderText = "Task";
-            DataGridViewTextBoxColumn project = new DataGridViewTextBoxColumn();
-            project.DataPropertyName = "Project";
-            project.HeaderText = "Project";
-            reportsView.Columns.Add(date);
-            reportsView.Columns.Add(expendure);
-            reportsView.Columns.Add(user);
-            reportsView.Columns.Add(task);
-            reportsView.Columns.Add(project);
 
             foreach (Report r in ReportService.FindAll())
             {
-                reportsView.Rows.Add(r.date.ToString("dd.MM.yyy"), r.expenditure, r.User().name, r.Task().name, r.Project().name);
+                reportsView.Rows.Add(r.date.ToString("dd.MM.yyy"), r.description, r.expenditure, r.Task().name, r.Project().Customer().name, r.User().name, r.Project().name);
             }
 
             cbCustomer.DataSource = CustomerService.FindAll();
@@ -59,9 +39,16 @@ namespace NovaV8
             reportsView.Rows.Clear();
             foreach (Report r in ReportService.FindReportsByProject((Project)cbProject.SelectedItem))
             {
-                reportsView.Rows.Add(r.date.ToString("dd.MM.yyy"), r.expenditure, r.User().name, r.Task().name, r.Project().name);
+                reportsView.Rows.Add(r.date.ToString("dd.MM.yyy"), r.description, r.expenditure, r.Task().name, r.Project().Customer().name, r.User().name, r.Project().name);
             }
         }
+
+        private void btnNewReport_Click(object sender, EventArgs e)
+        {
+            ReportForm newReportForm = new ReportForm();
+            newReportForm.Visible = true;
+        }
+
 
 
     }

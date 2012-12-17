@@ -4,13 +4,15 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
+using System.Globalization;
 
 namespace NovaV8
 {
     class Utils
     {
 
-        public static sealed User currentUser { get; set; }
+        public static User currentUser { get; set; }
 
         /// <summary>
         /// Gibt einen MD5 Hash als String zurück
@@ -32,7 +34,12 @@ namespace NovaV8
             }
             return sb.ToString();
 
-        } 
+        }
+
+        public static void setCultureInfo()
+        {
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("de-DE");
+        }
 
     }
 }

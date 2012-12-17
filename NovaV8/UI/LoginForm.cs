@@ -42,6 +42,11 @@ namespace NovaV8
             Reports reports = new Reports();
             reports.Visible = true;
         }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

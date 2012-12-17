@@ -38,6 +38,7 @@ namespace NovaV8
          /// <returns>Returns the number of rows affected</returns>
         public static int Exec(String sql)
         {
+            Console.WriteLine(sql);
             int count = 0;
             //Check if the connection is open
             if (DBConnector.Instance.GetConnection().State != System.Data.ConnectionState.Open)

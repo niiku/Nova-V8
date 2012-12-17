@@ -7,7 +7,7 @@ namespace NovaV8
     public class Project
     {
         public int id { get; set; }
-        public int customer;
+        public int customer { get; set;}
         public string number { get; set; }
         public DateTime begin { get; set; }
         public int active { get; set; }

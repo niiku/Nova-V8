@@ -5,9 +5,10 @@ namespace NovaV8
 {
     public class ReportService
     {
-        public static List<Report> FindReportsByProject(Project project) {
-        return Simplifier.Query<Report>("SELECT * FROM REPORT WHERE PROJECT = "+project.id+";");
-}
+        public static List<Report> FindReportsByProject(Project project)
+        {
+            return Simplifier.Query<Report>("SELECT * FROM REPORT WHERE PROJECT = " + project.id + ";");
+        }
         public static Report FindById<Report>(long id)
         {
             return Simplifier.findById<Report>(id);
@@ -22,6 +23,11 @@ namespace NovaV8
         {
             return Simplifier.Query<Report>("SELECT * FROM REPORT WHERE user =" + user.id + ";");
         }
+
+        public static void addReport(Report report)
+        {
+            Simplifier.insert(report);
+        }
     }
-   
+
 }

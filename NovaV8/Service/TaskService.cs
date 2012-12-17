@@ -5,7 +5,7 @@ namespace NovaV8
 {
     public class TaskService
     {
-        public List<Task> FindAll()
+        public static List<Task> FindAll()
         {
             return Simplifier.FindAll<Task>();
         }

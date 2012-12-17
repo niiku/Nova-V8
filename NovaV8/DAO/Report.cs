@@ -12,6 +12,7 @@ namespace NovaV8
         public int user { get; set; }
         public int task { get; set; }
         public int project { get; set; }
+        public String description { get; set; }
         public Task Task()
         {
             return Simplifier.findById<Task>(task);
@@ -25,6 +26,24 @@ namespace NovaV8
         public Project Project()
         {
             return Simplifier.findById<Project>(project);
+        }
+
+        public void setProject(Project project)
+        {
+            this.project = project.id;       
+            Simplifier.insertOrUpdate(project);
+        }
+
+        public void setTask(Task task)
+        {
+            this.task = task.id;
+            Simplifier.insertOrUpdate(task);
+        }
+
+        public void setUser(User user)
+        {
+            this.user = user.id;
+            Simplifier.insertOrUpdate(user);
         }
     }
 }

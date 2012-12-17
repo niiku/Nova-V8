@@ -12,14 +12,9 @@ namespace NovaV8
         public string name { get; set; }
         public string description { get; set; }
 
-        public Project Projekt()
+        public override String ToString()
         {
-            throw new NotImplementedException();
-        }
-
-        public List<Report> Rapporte()
-        {
-            throw new NotImplementedException();
+            return name;
         }
     }
 }

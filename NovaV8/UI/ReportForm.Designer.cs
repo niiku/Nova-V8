@@ -38,11 +38,11 @@
             this.lblInfo = new System.Windows.Forms.Label();
             this.btSave = new System.Windows.Forms.Button();
             this.btCancel = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.tbDecription = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tbHours = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.reportDate = new System.Windows.Forms.DateTimePicker();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bearbeitenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -79,6 +79,7 @@
             this.cbCustomer.Name = "cbCustomer";
             this.cbCustomer.Size = new System.Drawing.Size(320, 32);
             this.cbCustomer.TabIndex = 3;
+            this.cbCustomer.SelectedIndexChanged += new System.EventHandler(this.cbCustomer_SelectedIndexChanged);
             // 
             // cbProject
             // 
@@ -89,6 +90,7 @@
             this.cbProject.Name = "cbProject";
             this.cbProject.Size = new System.Drawing.Size(320, 32);
             this.cbProject.TabIndex = 5;
+            this.cbProject.SelectedIndexChanged += new System.EventHandler(this.cbProject_SelectedIndexChanged);
             // 
             // lblProject
             // 
@@ -139,6 +141,7 @@
             this.btSave.TabIndex = 11;
             this.btSave.Text = "Speichern";
             this.btSave.UseVisualStyleBackColor = true;
+            this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
             // btCancel
             // 
@@ -149,16 +152,17 @@
             this.btCancel.TabIndex = 12;
             this.btCancel.Text = "Abbrechen";
             this.btCancel.UseVisualStyleBackColor = true;
+            this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
             // 
-            // richTextBox1
+            // tbDecription
             // 
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(37, 362);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(692, 119);
-            this.richTextBox1.TabIndex = 13;
-            this.richTextBox1.Text = "";
+            this.tbDecription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbDecription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbDecription.Location = new System.Drawing.Point(37, 362);
+            this.tbDecription.Name = "tbDecription";
+            this.tbDecription.Size = new System.Drawing.Size(692, 119);
+            this.tbDecription.TabIndex = 13;
+            this.tbDecription.Text = "";
             // 
             // label1
             // 
@@ -177,6 +181,7 @@
             this.tbHours.Name = "tbHours";
             this.tbHours.Size = new System.Drawing.Size(54, 29);
             this.tbHours.TabIndex = 15;
+            this.tbHours.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbHours_KeyPress);
             // 
             // label3
             // 
@@ -188,13 +193,13 @@
             this.label3.TabIndex = 17;
             this.label3.Text = "Datum";
             // 
-            // dateTimePicker1
+            // reportDate
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(41, 284);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(316, 26);
-            this.dateTimePicker1.TabIndex = 18;
+            this.reportDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reportDate.Location = new System.Drawing.Point(41, 284);
+            this.reportDate.Name = "reportDate";
+            this.reportDate.Size = new System.Drawing.Size(316, 26);
+            this.reportDate.TabIndex = 18;
             // 
             // menuStrip1
             // 
@@ -239,11 +244,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(762, 550);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.reportDate);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tbHours);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.tbDecription);
             this.Controls.Add(this.btCancel);
             this.Controls.Add(this.btSave);
             this.Controls.Add(this.lblInfo);
@@ -256,6 +261,7 @@
             this.Controls.Add(this.lblLogin);
             this.Name = "ReportForm";
             this.Text = "Raport erfassen";
+            this.Load += new System.EventHandler(this.ReportForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -275,11 +281,11 @@
         private System.Windows.Forms.Label lblInfo;
         private System.Windows.Forms.Button btSave;
         private System.Windows.Forms.Button btCancel;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox tbDecription;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbHours;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker reportDate;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem dateiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bearbeitenToolStripMenuItem;
