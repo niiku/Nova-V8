@@ -20,26 +20,28 @@ namespace NovaV8
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            // Felder leer?
+            if (username.Text.Trim().Equals("") || password.Text.Equals(""))
+            {
+                MessageBox.Show("Bitte alle Felder ausfüllen", "Fehler");
+                return;
+            }
+            // Lade User
             User user = UserService.FindUserByName(username.Text);
-            if (user != null)
+            // Benutzer gefunden und richtiges Passwort?
+            if (user == null || !user.rightPassword(password.Text))
             {
-                if (user.rightPassword(password.Text))
-                {
-                    base.Hide();
-                    Reports reports = new Reports();
-                    reports.Visible = true;
-                }
-                else
-                {
-                    MessageBox.Show("Password is not correct for user " + username.Text, "Login Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
+                MessageBox.Show("Benutzername und Passwort stimmen nicht überein", "Fehler");
+                return;
+
             }
-            else
-            {
-                MessageBox.Show("Username does not exist in Database", "Login Error",
-                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
+
+            // Falls alles OK
+            Utils.currentUser = user;
+            base.Hide();
+            Reports reports = new Reports();
+            reports.Visible = true;
         }
     }
 }
+

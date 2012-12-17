@@ -10,6 +10,8 @@ namespace NovaV8
     class Utils
     {
 
+        public static sealed User currentUser { get; set; }
+
         /// <summary>
         /// Gibt einen MD5 Hash als String zurück
         /// </summary>
