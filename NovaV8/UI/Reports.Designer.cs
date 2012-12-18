@@ -35,11 +35,11 @@
             this.lblProject = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bearbeitenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stammdatenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.beendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsView = new System.Windows.Forms.DataGridView();
-            this.btnNewReport = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.activity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +50,10 @@
             this.project = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnNewReport = new System.Windows.Forms.Button();
+            this.permissionMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stammdatenMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.infoMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reportsView)).BeginInit();
             this.SuspendLayout();
@@ -109,9 +113,9 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dateiToolStripMenuItem,
-            this.bearbeitenToolStripMenuItem,
-            this.stammdatenToolStripMenuItem,
-            this.hilfeToolStripMenuItem});
+            this.permissionMenuItem,
+            this.stammdatenMenuItem,
+            this.infoMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1128, 24);
@@ -120,27 +124,35 @@
             // 
             // dateiToolStripMenuItem
             // 
+            this.dateiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSeparator,
+            this.toolStripSeparator1,
+            this.toolStripSeparator2,
+            this.beendenToolStripMenuItem});
             this.dateiToolStripMenuItem.Name = "dateiToolStripMenuItem";
             this.dateiToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
-            this.dateiToolStripMenuItem.Text = "Datei";
+            this.dateiToolStripMenuItem.Text = "&Datei";
             // 
-            // bearbeitenToolStripMenuItem
+            // toolStripSeparator
             // 
-            this.bearbeitenToolStripMenuItem.Name = "bearbeitenToolStripMenuItem";
-            this.bearbeitenToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
-            this.bearbeitenToolStripMenuItem.Text = "Bearbeiten";
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(117, 6);
             // 
-            // stammdatenToolStripMenuItem
+            // toolStripSeparator1
             // 
-            this.stammdatenToolStripMenuItem.Name = "stammdatenToolStripMenuItem";
-            this.stammdatenToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
-            this.stammdatenToolStripMenuItem.Text = "Stammdaten";
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(117, 6);
             // 
-            // hilfeToolStripMenuItem
+            // toolStripSeparator2
             // 
-            this.hilfeToolStripMenuItem.Name = "hilfeToolStripMenuItem";
-            this.hilfeToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.hilfeToolStripMenuItem.Text = "Hilfe";
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(117, 6);
+            // 
+            // beendenToolStripMenuItem
+            // 
+            this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.beendenToolStripMenuItem.Text = "&Beenden";
             // 
             // reportsView
             // 
@@ -163,17 +175,6 @@
             this.reportsView.Size = new System.Drawing.Size(1062, 463);
             this.reportsView.TabIndex = 20;
             this.reportsView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.reportsView_CellContentClick);
-            // 
-            // btnNewReport
-            // 
-            this.btnNewReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewReport.Location = new System.Drawing.Point(957, 110);
-            this.btnNewReport.Name = "btnNewReport";
-            this.btnNewReport.Size = new System.Drawing.Size(142, 37);
-            this.btnNewReport.TabIndex = 21;
-            this.btnNewReport.Text = "Hinzufügen";
-            this.btnNewReport.UseVisualStyleBackColor = true;
-            this.btnNewReport.Click += new System.EventHandler(this.btnNewReport_Click);
             // 
             // id
             // 
@@ -231,6 +232,37 @@
             this.edit.Text = "Bearbeiten";
             this.edit.UseColumnTextForButtonValue = true;
             // 
+            // btnNewReport
+            // 
+            this.btnNewReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewReport.Location = new System.Drawing.Point(957, 110);
+            this.btnNewReport.Name = "btnNewReport";
+            this.btnNewReport.Size = new System.Drawing.Size(142, 37);
+            this.btnNewReport.TabIndex = 21;
+            this.btnNewReport.Text = "Hinzufügen";
+            this.btnNewReport.UseVisualStyleBackColor = true;
+            this.btnNewReport.Click += new System.EventHandler(this.btnNewReport_Click);
+            // 
+            // permissionMenuItem
+            // 
+            this.permissionMenuItem.Name = "permissionMenuItem";
+            this.permissionMenuItem.Size = new System.Drawing.Size(103, 20);
+            this.permissionMenuItem.Text = "Berechtigungen";
+            this.permissionMenuItem.Click += new System.EventHandler(this.optionenToolStripMenuItem_Click);
+            // 
+            // stammdatenMenuItem
+            // 
+            this.stammdatenMenuItem.Name = "stammdatenMenuItem";
+            this.stammdatenMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.stammdatenMenuItem.Text = "Stammdaten";
+            // 
+            // infoMenuItem
+            // 
+            this.infoMenuItem.Name = "infoMenuItem";
+            this.infoMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.infoMenuItem.Text = "Info";
+            this.infoMenuItem.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
+            // 
             // Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -263,10 +295,6 @@
         private System.Windows.Forms.ComboBox cbProject;
         private System.Windows.Forms.Label lblProject;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem dateiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bearbeitenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem stammdatenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hilfeToolStripMenuItem;
         private System.Windows.Forms.DataGridView reportsView;
         private System.Windows.Forms.Button btnNewReport;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
@@ -279,5 +307,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn project;
         private System.Windows.Forms.DataGridViewButtonColumn delete;
         private System.Windows.Forms.DataGridViewButtonColumn edit;
+        private System.Windows.Forms.ToolStripMenuItem dateiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem beendenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem permissionMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stammdatenMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem infoMenuItem;
     }
 }

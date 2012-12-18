@@ -10,9 +10,9 @@ namespace NovaV8
                 return Simplifier.Query<Project>("SELECT * FROM PROJECT WHERE CUSTOMER = "+customer.id+";");
         }
 
-        public static Project FindById<Project>(long id)
+        public static Z FindById<Z>(long id)
         {
-            return Simplifier.findById<Project>(id);
+            return Simplifier.findById<Z>(id);
         }
     }
 }

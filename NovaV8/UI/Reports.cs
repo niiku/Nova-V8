@@ -16,15 +16,29 @@ namespace NovaV8
         public Reports()
         {
             InitializeComponent();
+            loadPermissions();
+
         }
+
+        public void loadPermissions()
+        {
+            btnNewReport.Enabled = Utils.currentUser.hasPermissionForComponent(Component.ADD_REPORT);
+            permissionMenuItem.Visible =  Utils.currentUser.hasPermissionForComponent(Component.EDIT_PERMISSION) || Utils.currentUser.hasPermissionForComponent(Component.ADD_PERMISSION);
+            stammdatenMenuItem.Visible = Utils.currentUser.hasPermissionForComponent(Component.SHOW_STAMMDATEN);
+
+        }
+
+
 
         public void refreshView()
         {
+            loadPermissions();
             reportsView.Rows.Clear();
             foreach (Report r in ReportService.FindReportsByProject((Project)cbProject.SelectedItem))
             {
                 reportsView.Rows.Add(r.id, r.date.ToString("dd.MM.yyy"), r.description, r.expenditure, r.Task().name, r.Project().Customer().name, r.User().name, r.Project().name);
             }
+            
         }
 
         private void Reports_Load(object sender, EventArgs e)
@@ -63,6 +77,21 @@ namespace NovaV8
                 Simplifier.delete(r);
             }
             refreshView();
+        }
+        private static Info info = new Info();
+        private void infoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            info.Visible = true;
+        }
+
+        private ProfileOverview profileUi;
+        private void optionenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (profileUi == null)
+            {
+                profileUi = new ProfileOverview(this);
+            }
+            profileUi.ShowDialog();
         }
 
 

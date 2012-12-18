@@ -76,6 +76,7 @@
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(319, 29);
             this.username.TabIndex = 3;
+            this.username.Text = "philipsn";
             // 
             // password
             // 
@@ -84,6 +85,7 @@
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(319, 29);
             this.password.TabIndex = 4;
+            this.password.Text = "novav8";
             this.password.UseSystemPasswordChar = true;
             // 
             // btnLogin

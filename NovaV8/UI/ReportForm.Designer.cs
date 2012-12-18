@@ -43,19 +43,13 @@
             this.tbHours = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.reportDate = new System.Windows.Forms.DateTimePicker();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bearbeitenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stammdatenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblLogin
             // 
             this.lblLogin.AutoSize = true;
             this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin.Location = new System.Drawing.Point(30, 36);
+            this.lblLogin.Location = new System.Drawing.Point(26, 15);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(279, 39);
             this.lblLogin.TabIndex = 1;
@@ -65,7 +59,7 @@
             // 
             this.lblCustomer.AutoSize = true;
             this.lblCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomer.Location = new System.Drawing.Point(33, 102);
+            this.lblCustomer.Location = new System.Drawing.Point(29, 81);
             this.lblCustomer.Name = "lblCustomer";
             this.lblCustomer.Size = new System.Drawing.Size(55, 20);
             this.lblCustomer.TabIndex = 2;
@@ -75,7 +69,7 @@
             // 
             this.cbCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCustomer.FormattingEnabled = true;
-            this.cbCustomer.Location = new System.Drawing.Point(37, 125);
+            this.cbCustomer.Location = new System.Drawing.Point(33, 104);
             this.cbCustomer.Name = "cbCustomer";
             this.cbCustomer.Size = new System.Drawing.Size(320, 32);
             this.cbCustomer.TabIndex = 3;
@@ -86,7 +80,7 @@
             this.cbProject.Enabled = false;
             this.cbProject.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbProject.FormattingEnabled = true;
-            this.cbProject.Location = new System.Drawing.Point(409, 125);
+            this.cbProject.Location = new System.Drawing.Point(405, 104);
             this.cbProject.Name = "cbProject";
             this.cbProject.Size = new System.Drawing.Size(320, 32);
             this.cbProject.TabIndex = 5;
@@ -96,7 +90,7 @@
             // 
             this.lblProject.AutoSize = true;
             this.lblProject.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProject.Location = new System.Drawing.Point(405, 102);
+            this.lblProject.Location = new System.Drawing.Point(401, 81);
             this.lblProject.Name = "lblProject";
             this.lblProject.Size = new System.Drawing.Size(58, 20);
             this.lblProject.TabIndex = 4;
@@ -107,7 +101,7 @@
             this.cbTask.Enabled = false;
             this.cbTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTask.FormattingEnabled = true;
-            this.cbTask.Location = new System.Drawing.Point(37, 202);
+            this.cbTask.Location = new System.Drawing.Point(33, 181);
             this.cbTask.Name = "cbTask";
             this.cbTask.Size = new System.Drawing.Size(320, 32);
             this.cbTask.TabIndex = 7;
@@ -116,7 +110,7 @@
             // 
             this.lblTask.AutoSize = true;
             this.lblTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTask.Location = new System.Drawing.Point(33, 179);
+            this.lblTask.Location = new System.Drawing.Point(29, 158);
             this.lblTask.Name = "lblTask";
             this.lblTask.Size = new System.Drawing.Size(70, 20);
             this.lblTask.TabIndex = 6;
@@ -126,7 +120,7 @@
             // 
             this.lblInfo.AutoSize = true;
             this.lblInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfo.Location = new System.Drawing.Point(33, 339);
+            this.lblInfo.Location = new System.Drawing.Point(29, 318);
             this.lblInfo.Name = "lblInfo";
             this.lblInfo.Size = new System.Drawing.Size(74, 20);
             this.lblInfo.TabIndex = 9;
@@ -135,7 +129,7 @@
             // btSave
             // 
             this.btSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSave.Location = new System.Drawing.Point(588, 501);
+            this.btSave.Location = new System.Drawing.Point(584, 480);
             this.btSave.Name = "btSave";
             this.btSave.Size = new System.Drawing.Size(142, 37);
             this.btSave.TabIndex = 11;
@@ -146,7 +140,7 @@
             // btCancel
             // 
             this.btCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCancel.Location = new System.Drawing.Point(440, 501);
+            this.btCancel.Location = new System.Drawing.Point(436, 480);
             this.btCancel.Name = "btCancel";
             this.btCancel.Size = new System.Drawing.Size(142, 37);
             this.btCancel.TabIndex = 12;
@@ -158,7 +152,7 @@
             // 
             this.tbDecription.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbDecription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDecription.Location = new System.Drawing.Point(37, 362);
+            this.tbDecription.Location = new System.Drawing.Point(33, 341);
             this.tbDecription.Name = "tbDecription";
             this.tbDecription.Size = new System.Drawing.Size(692, 119);
             this.tbDecription.TabIndex = 13;
@@ -168,7 +162,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(405, 179);
+            this.label1.Location = new System.Drawing.Point(401, 158);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(187, 20);
             this.label1.TabIndex = 14;
@@ -177,7 +171,7 @@
             // tbHours
             // 
             this.tbHours.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbHours.Location = new System.Drawing.Point(409, 202);
+            this.tbHours.Location = new System.Drawing.Point(405, 181);
             this.tbHours.Name = "tbHours";
             this.tbHours.Size = new System.Drawing.Size(54, 29);
             this.tbHours.TabIndex = 15;
@@ -187,7 +181,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(37, 261);
+            this.label3.Location = new System.Drawing.Point(33, 240);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 20);
             this.label3.TabIndex = 17;
@@ -196,54 +190,16 @@
             // reportDate
             // 
             this.reportDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reportDate.Location = new System.Drawing.Point(41, 284);
+            this.reportDate.Location = new System.Drawing.Point(37, 263);
             this.reportDate.Name = "reportDate";
             this.reportDate.Size = new System.Drawing.Size(316, 26);
             this.reportDate.TabIndex = 18;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dateiToolStripMenuItem,
-            this.bearbeitenToolStripMenuItem,
-            this.stammdatenToolStripMenuItem,
-            this.hilfeToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(762, 24);
-            this.menuStrip1.TabIndex = 19;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // dateiToolStripMenuItem
-            // 
-            this.dateiToolStripMenuItem.Name = "dateiToolStripMenuItem";
-            this.dateiToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
-            this.dateiToolStripMenuItem.Text = "Datei";
-            // 
-            // bearbeitenToolStripMenuItem
-            // 
-            this.bearbeitenToolStripMenuItem.Name = "bearbeitenToolStripMenuItem";
-            this.bearbeitenToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
-            this.bearbeitenToolStripMenuItem.Text = "Bearbeiten";
-            // 
-            // stammdatenToolStripMenuItem
-            // 
-            this.stammdatenToolStripMenuItem.Name = "stammdatenToolStripMenuItem";
-            this.stammdatenToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
-            this.stammdatenToolStripMenuItem.Text = "Stammdaten";
-            // 
-            // hilfeToolStripMenuItem
-            // 
-            this.hilfeToolStripMenuItem.Name = "hilfeToolStripMenuItem";
-            this.hilfeToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.hilfeToolStripMenuItem.Text = "Hilfe";
             // 
             // ReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(762, 550);
-            this.Controls.Add(this.menuStrip1);
+            this.ClientSize = new System.Drawing.Size(740, 531);
             this.Controls.Add(this.reportDate);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tbHours);
@@ -262,8 +218,6 @@
             this.Name = "ReportForm";
             this.Text = "Raport erfassen";
             this.Load += new System.EventHandler(this.ReportForm_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,10 +240,5 @@
         private System.Windows.Forms.TextBox tbHours;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker reportDate;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem dateiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bearbeitenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem stammdatenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hilfeToolStripMenuItem;
     }
 }
