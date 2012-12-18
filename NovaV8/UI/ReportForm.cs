@@ -12,8 +12,12 @@ namespace NovaV8
 {
     public partial class ReportForm : Form
     {
-        public ReportForm()
+        Report report;
+        Form parent;
+
+        public ReportForm(Form parent)
         {
+            this.parent = parent;
             InitializeComponent();
         }
 
@@ -25,6 +29,19 @@ namespace NovaV8
         private void ReportForm_Load(object sender, EventArgs e)
         {
             cbCustomer.DataSource = CustomerService.FindAll();
+            if (report != null)
+            {
+                reportDate.Value = report.date;
+                tbHours.Text = report.expenditure.ToString();
+                cbProject.SelectedItem = report.Project();
+                cbTask.SelectedItem = report.Task();
+                tbDecription.Text = report.description;
+            }
+        }
+
+        public void setReport(Report r)
+        {
+            report = r;
         }
 
         private void cbCustomer_SelectedIndexChanged(object sender, EventArgs e)
@@ -43,12 +60,29 @@ namespace NovaV8
         {
             Report r = new Report();
             r.date = ((DateTime)reportDate.Value);
-            r.expenditure = Convert.ToInt16(tbHours.Text);
+            if (tbHours.Text.Length > 0)
+            {
+                r.expenditure = Convert.ToInt16(tbHours.Text);
+            }
+            else
+            {
+                r.expenditure = 0;
+            }
             r.setProject((Project)cbProject.SelectedItem);
             r.setTask((Task)cbTask.SelectedItem);
             r.setUser(Utils.currentUser);
             r.description = tbDecription.Text;
-            ReportService.addReport(r);
+            if (report != null)
+            {
+                if (report.id != 0)
+                {
+                    r.id = report.id;
+                }
+            }
+
+            Simplifier.insertOrUpdate(r);
+            ((Reports)this.parent).refreshView();
+            this.Close();
         }
 
         private void tbHours_KeyPress(object sender, KeyPressEventArgs e)
@@ -59,8 +93,7 @@ namespace NovaV8
             }
 
             // only allow one decimal point
-            if (e.KeyChar == '.'
-                && (sender as TextBox).Text.IndexOf('.') > -1)
+            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
             {
                 e.Handled = true;
             }

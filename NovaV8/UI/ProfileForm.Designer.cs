@@ -32,11 +32,12 @@
             this.btSave = new System.Windows.Forms.Button();
             this.btCancel = new System.Windows.Forms.Button();
             this.lblLogin = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tbRolename = new System.Windows.Forms.TextBox();
+            this.componentsView = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.componentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkBoxes = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.componentsView)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCustomer
@@ -58,6 +59,7 @@
             this.btSave.TabIndex = 11;
             this.btSave.Text = "Speichern";
             this.btSave.UseVisualStyleBackColor = true;
+            this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
             // btCancel
             // 
@@ -68,6 +70,7 @@
             this.btCancel.TabIndex = 12;
             this.btCancel.Text = "Abbrechen";
             this.btCancel.UseVisualStyleBackColor = true;
+            this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
             // 
             // lblLogin
             // 
@@ -79,24 +82,31 @@
             this.lblLogin.TabIndex = 1;
             this.lblLogin.Text = "Berechtigung hinzufügen";
             // 
-            // textBox1
+            // tbRolename
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(35, 106);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(424, 29);
-            this.textBox1.TabIndex = 20;
+            this.tbRolename.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbRolename.Location = new System.Drawing.Point(35, 106);
+            this.tbRolename.Name = "tbRolename";
+            this.tbRolename.Size = new System.Drawing.Size(424, 29);
+            this.tbRolename.TabIndex = 20;
             // 
-            // dataGridView1
+            // componentsView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.componentsView.AllowUserToAddRows = false;
+            this.componentsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.componentsView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
             this.componentName,
             this.checkBoxes});
-            this.dataGridView1.Location = new System.Drawing.Point(35, 153);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(424, 169);
-            this.dataGridView1.TabIndex = 21;
+            this.componentsView.Location = new System.Drawing.Point(35, 153);
+            this.componentsView.Name = "componentsView";
+            this.componentsView.Size = new System.Drawing.Size(424, 169);
+            this.componentsView.TabIndex = 21;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "Id";
+            this.id.Name = "id";
             // 
             // componentName
             // 
@@ -108,20 +118,21 @@
             this.checkBoxes.HeaderText = "";
             this.checkBoxes.Name = "checkBoxes";
             // 
-            // Report
+            // ProfilForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(495, 397);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.componentsView);
+            this.Controls.Add(this.tbRolename);
             this.Controls.Add(this.btCancel);
             this.Controls.Add(this.btSave);
             this.Controls.Add(this.lblCustomer);
             this.Controls.Add(this.lblLogin);
-            this.Name = "Report";
+            this.Name = "ProfilForm";
             this.Text = "Berechtigung hinzufügen";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.ProfilForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.componentsView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,8 +144,9 @@
         private System.Windows.Forms.Button btSave;
         private System.Windows.Forms.Button btCancel;
         private System.Windows.Forms.Label lblLogin;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox tbRolename;
+        private System.Windows.Forms.DataGridView componentsView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn componentName;
         private System.Windows.Forms.DataGridViewCheckBoxColumn checkBoxes;
     }

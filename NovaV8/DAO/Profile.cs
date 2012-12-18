@@ -18,5 +18,35 @@ namespace NovaV8
 "WHERE pr.id = " + id + ";");
 
         }
+
+        public void setComponent(Component c)
+        {
+            List<Permission> pList = PermissionService.FindPermissionByComponentAndProfile(c, this);
+            if (pList.Count > 0)
+            {
+                Permission p = pList[0];
+                p.component = c.id;
+                p.profile = id;
+                Simplifier.update(p);
+            }
+            else
+            {
+                Permission newP = new Permission();
+                newP.component = c.id;
+                newP.profile = id;
+                Simplifier.insert(newP);
+            }
+
+        }
+
+        public void removeComponent(Component c)
+        {
+            List<Permission> pList = PermissionService.FindPermissionByComponentAndProfile(c, this);
+            if (pList.Count > 0)
+            {
+                Permission p = pList[0];
+                Simplifier.delete(p);
+            }
+        }
     }
 }

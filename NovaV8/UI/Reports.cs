@@ -12,19 +12,23 @@ namespace NovaV8
 {
     public partial class Reports : Form
     {
+
         public Reports()
         {
             InitializeComponent();
         }
 
+        public void refreshView()
+        {
+            reportsView.Rows.Clear();
+            foreach (Report r in ReportService.FindReportsByProject((Project)cbProject.SelectedItem))
+            {
+                reportsView.Rows.Add(r.id, r.date.ToString("dd.MM.yyy"), r.description, r.expenditure, r.Task().name, r.Project().Customer().name, r.User().name, r.Project().name);
+            }
+        }
+
         private void Reports_Load(object sender, EventArgs e)
         {
-
-            foreach (Report r in ReportService.FindAll())
-            {
-                reportsView.Rows.Add(r.date.ToString("dd.MM.yyy"), r.description, r.expenditure, r.Task().name, r.Project().Customer().name, r.User().name, r.Project().name);
-            }
-
             cbCustomer.DataSource = CustomerService.FindAll();
         }
 
@@ -36,17 +40,29 @@ namespace NovaV8
 
         private void cbProject_SelectedIndexChanged(object sender, EventArgs e)
         {
-            reportsView.Rows.Clear();
-            foreach (Report r in ReportService.FindReportsByProject((Project)cbProject.SelectedItem))
-            {
-                reportsView.Rows.Add(r.date.ToString("dd.MM.yyy"), r.description, r.expenditure, r.Task().name, r.Project().Customer().name, r.User().name, r.Project().name);
-            }
+            refreshView();
         }
 
         private void btnNewReport_Click(object sender, EventArgs e)
         {
-            ReportForm newReportForm = new ReportForm();
+            ReportForm newReportForm = new ReportForm(this);
             newReportForm.Visible = true;
+        }
+
+        private void reportsView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Report r = ReportService.FindById<Report>(Convert.ToInt64(reportsView.Rows[e.RowIndex].Cells[0].Value));
+            if (e.ColumnIndex == 9)
+            {
+                ReportForm reportForm = new ReportForm(this);
+                reportForm.setReport(r);
+                reportForm.Visible = true;
+            }
+            else if (e.ColumnIndex == 8)
+            {
+                Simplifier.delete(r);
+            }
+            refreshView();
         }
 
 

@@ -40,6 +40,7 @@
             this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsView = new System.Windows.Forms.DataGridView();
             this.btnNewReport = new System.Windows.Forms.Button();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.activity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.expendure = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +48,8 @@
             this.customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.user = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.project = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reportsView)).BeginInit();
             this.SuspendLayout();
@@ -145,17 +148,21 @@
             this.reportsView.AllowUserToDeleteRows = false;
             this.reportsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.reportsView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
             this.date,
             this.activity,
             this.expendure,
             this.task,
             this.customer,
             this.user,
-            this.project});
+            this.project,
+            this.delete,
+            this.edit});
             this.reportsView.Location = new System.Drawing.Point(37, 163);
             this.reportsView.Name = "reportsView";
             this.reportsView.Size = new System.Drawing.Size(1062, 463);
             this.reportsView.TabIndex = 20;
+            this.reportsView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.reportsView_CellContentClick);
             // 
             // btnNewReport
             // 
@@ -167,6 +174,11 @@
             this.btnNewReport.Text = "Hinzufügen";
             this.btnNewReport.UseVisualStyleBackColor = true;
             this.btnNewReport.Click += new System.EventHandler(this.btnNewReport_Click);
+            // 
+            // id
+            // 
+            this.id.HeaderText = "Id";
+            this.id.Name = "id";
             // 
             // date
             // 
@@ -202,6 +214,22 @@
             // 
             this.project.HeaderText = "Projekt";
             this.project.Name = "project";
+            // 
+            // delete
+            // 
+            this.delete.HeaderText = "Löschen";
+            this.delete.Name = "delete";
+            this.delete.Text = "Löschen";
+            this.delete.UseColumnTextForButtonValue = true;
+            // 
+            // edit
+            // 
+            this.edit.HeaderText = "Bearbeiten";
+            this.edit.Name = "edit";
+            this.edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.edit.Text = "Bearbeiten";
+            this.edit.UseColumnTextForButtonValue = true;
             // 
             // Reports
             // 
@@ -241,6 +269,7 @@
         private System.Windows.Forms.ToolStripMenuItem hilfeToolStripMenuItem;
         private System.Windows.Forms.DataGridView reportsView;
         private System.Windows.Forms.Button btnNewReport;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn activity;
         private System.Windows.Forms.DataGridViewTextBoxColumn expendure;
@@ -248,5 +277,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn customer;
         private System.Windows.Forms.DataGridViewTextBoxColumn user;
         private System.Windows.Forms.DataGridViewTextBoxColumn project;
+        private System.Windows.Forms.DataGridViewButtonColumn delete;
+        private System.Windows.Forms.DataGridViewButtonColumn edit;
     }
 }

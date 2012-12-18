@@ -8,5 +8,10 @@ namespace NovaV8
     {
         public int id { get; set; }
         public string name { get; set; }
+
+        public override String ToString()
+        {
+            return name;
+        }
     }
 }

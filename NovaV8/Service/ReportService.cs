@@ -23,11 +23,6 @@ namespace NovaV8
         {
             return Simplifier.Query<Report>("SELECT * FROM REPORT WHERE user =" + user.id + ";");
         }
-
-        public static void addReport(Report report)
-        {
-            Simplifier.insert(report);
-        }
     }
 
 }

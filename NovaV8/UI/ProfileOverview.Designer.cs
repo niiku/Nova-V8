@@ -28,40 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.authorityTable = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bearbeitenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stammdatenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblLogin = new System.Windows.Forms.Label();
-            this.btnLogin = new System.Windows.Forms.Button();
+            this.btnNewPermission = new System.Windows.Forms.Button();
+            this.authorityView = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rolename = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createReport = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.editReport = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.authorityManagement = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.deleteRule = new System.Windows.Forms.DataGridViewButtonColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.authorityTable)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.authorityView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // authorityTable
-            // 
-            this.authorityTable.AllowUserToDeleteRows = false;
-            this.authorityTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.authorityTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.rolename,
-            this.createReport,
-            this.editReport,
-            this.authorityManagement,
-            this.edit,
-            this.deleteRule});
-            this.authorityTable.Location = new System.Drawing.Point(0, 108);
-            this.authorityTable.Name = "authorityTable";
-            this.authorityTable.Size = new System.Drawing.Size(748, 285);
-            this.authorityTable.TabIndex = 0;
-            this.authorityTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // menuStrip1
             // 
@@ -110,65 +91,75 @@
             this.lblLogin.TabIndex = 2;
             this.lblLogin.Text = "Berechtigungen";
             // 
-            // btnLogin
+            // btnNewPermission
             // 
-            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(586, 44);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(162, 36);
-            this.btnLogin.TabIndex = 22;
-            this.btnLogin.Text = "Hinzufügen";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnNewPermission.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewPermission.Location = new System.Drawing.Point(586, 44);
+            this.btnNewPermission.Name = "btnNewPermission";
+            this.btnNewPermission.Size = new System.Drawing.Size(162, 36);
+            this.btnNewPermission.TabIndex = 22;
+            this.btnNewPermission.Text = "Hinzufügen";
+            this.btnNewPermission.UseVisualStyleBackColor = true;
+            this.btnNewPermission.Click += new System.EventHandler(this.btnNewPermission_Click);
+            // 
+            // authorityView
+            // 
+            this.authorityView.AllowUserToAddRows = false;
+            this.authorityView.AllowUserToDeleteRows = false;
+            this.authorityView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.authorityView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.rolename,
+            this.delete,
+            this.edit});
+            this.authorityView.Location = new System.Drawing.Point(12, 86);
+            this.authorityView.Name = "authorityView";
+            this.authorityView.Size = new System.Drawing.Size(736, 306);
+            this.authorityView.TabIndex = 23;
+            this.authorityView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.authorityView_CellContentClick);
+            // 
+            // id
+            // 
+            this.id.HeaderText = "Id";
+            this.id.Name = "id";
             // 
             // rolename
             // 
-            this.rolename.FillWeight = 200F;
-            this.rolename.HeaderText = "Rollenname";
+            this.rolename.HeaderText = "Rolenname";
             this.rolename.Name = "rolename";
-            this.rolename.Width = 200;
             // 
-            // createReport
+            // delete
             // 
-            this.createReport.HeaderText = "Rapport erstellen";
-            this.createReport.Name = "createReport";
-            this.createReport.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.createReport.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // editReport
-            // 
-            this.editReport.HeaderText = "Raporte bearbeiten";
-            this.editReport.Name = "editReport";
-            // 
-            // authorityManagement
-            // 
-            this.authorityManagement.HeaderText = "Berechtigungen verwalten";
-            this.authorityManagement.Name = "authorityManagement";
+            this.delete.HeaderText = "Löschen";
+            this.delete.Name = "delete";
+            this.delete.Text = "Löschen";
+            this.delete.UseColumnTextForButtonValue = true;
             // 
             // edit
             // 
             this.edit.HeaderText = "Bearbeiten";
             this.edit.Name = "edit";
+            this.edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.edit.Text = "Bearbeiten";
+            this.edit.UseColumnTextForButtonValue = true;
             // 
-            // deleteRule
-            // 
-            this.deleteRule.HeaderText = "Löschen";
-            this.deleteRule.Name = "deleteRule";
-            // 
-            // Authority
+            // Profil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(760, 404);
-            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.authorityView);
+            this.Controls.Add(this.btnNewPermission);
             this.Controls.Add(this.lblLogin);
-            this.Controls.Add(this.authorityTable);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Authority";
+            this.Name = "Profil";
             this.Text = "Berechtigungen verwalten";
-            ((System.ComponentModel.ISupportInitialize)(this.authorityTable)).EndInit();
+            this.Load += new System.EventHandler(this.Profil_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.authorityView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,19 +167,17 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView authorityTable;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem dateiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bearbeitenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stammdatenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hilfeToolStripMenuItem;
         private System.Windows.Forms.Label lblLogin;
-        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Button btnNewPermission;
+        private System.Windows.Forms.DataGridView authorityView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn rolename;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn createReport;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn editReport;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn authorityManagement;
+        private System.Windows.Forms.DataGridViewButtonColumn delete;
         private System.Windows.Forms.DataGridViewButtonColumn edit;
-        private System.Windows.Forms.DataGridViewButtonColumn deleteRule;
     }
 }
