@@ -13,6 +13,7 @@ C:\Users\niiku\Documents\Visual Studio 2012\Projects\NovaV8\NovaV8\bin\Debug\Win
 C:\Users\niiku\Documents\Visual Studio 2012\Projects\NovaV8\NovaV8\bin\Debug\WindowsFormsApplication1.pdb
 C:\Users\niiku\Documents\Visual Studio 2012\Projects\NovaV8\NovaV8\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\niiku\Documents\Visual Studio 2012\Projects\NovaV8\NovaV8\obj\Debug\WindowsFormsApplication1.pdb
+<<<<<<< HEAD
 C:\dev\view\Nova-V8\NovaV8\bin\Debug\WindowsFormsApplication1.exe.config
 C:\dev\view\Nova-V8\NovaV8\obj\Debug\WindowsFormsApplication1.exe
 C:\dev\view\Nova-V8\NovaV8\obj\Debug\WindowsFormsApplication1.pdb
@@ -32,3 +33,6 @@ C:\dev\view\Nova-V8\NovaV8\obj\Debug\NovaV8.csproj.GenerateResource.Cache
 C:\dev\view\Nova-V8\NovaV8\obj\Debug\NovaV8.UI.Customer.resources
 C:\dev\view\Nova-V8\NovaV8\obj\Debug\NovaV8.Projects.resources
 C:\dev\view\Nova-V8\NovaV8\obj\Debug\NovaV8.Tasks.resources
+=======
+C:\Users\niiku\Documents\Visual Studio 2012\Projects\NovaV8\NovaV8\obj\Debug\NovaV8.csprojResolveAssemblyReference.cache
+>>>>>>> 5157337fb981b43a047f1872ca46952f74ef27f7

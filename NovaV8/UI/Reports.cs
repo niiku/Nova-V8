@@ -118,7 +118,11 @@ namespace NovaV8
 
         private void Reports_FormClosed(object sender, FormClosedEventArgs e)
         {
+            Console.WriteLine("Close DB-Connection...");
+            DBConnector.Instance.GetConnection().Close();
+            Console.WriteLine("Close Application...");
             Application.Exit();
+
         }
 
         private void beendenToolStripMenuItem_Click(object sender, EventArgs e)
@@ -128,7 +132,7 @@ namespace NovaV8
 
         private void mitarbeiterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Staff(this).ShowDialog();
+            new Staff(this).ShowDialog(); 
         }
 
         private void kundenToolStripMenuItem_Click(object sender, EventArgs e)

@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Configuration;
+using System.Windows.Forms;
+
 
 namespace NovaV8
 {
@@ -46,12 +48,16 @@ namespace NovaV8
                 if (this.connection == null)
                 {
                     this.connection = new MySqlConnection(this.connectionString);
+                    this.connection.Open();
                 }
                 return this.connection;
             }
             catch (MySqlException e)
             {
-                throw new DatabaseException("Error connecting Database {0}", e);
+                Console.WriteLine(e.Message);
+                MessageBox.Show("Datenbankverbindung konnte nicht hergestellt werden");
+                Application.Exit();
+                return null;
             }
         }
 
