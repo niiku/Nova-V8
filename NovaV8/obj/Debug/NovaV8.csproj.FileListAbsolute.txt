@@ -13,3 +13,4 @@ C:\Users\niiku\Documents\Visual Studio 2012\Projects\NovaV8\NovaV8\bin\Debug\Win
 C:\Users\niiku\Documents\Visual Studio 2012\Projects\NovaV8\NovaV8\bin\Debug\WindowsFormsApplication1.pdb
 C:\Users\niiku\Documents\Visual Studio 2012\Projects\NovaV8\NovaV8\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\niiku\Documents\Visual Studio 2012\Projects\NovaV8\NovaV8\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\niiku\Documents\Visual Studio 2012\Projects\NovaV8\NovaV8\obj\Debug\NovaV8.csprojResolveAssemblyReference.cache

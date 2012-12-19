@@ -45,7 +45,7 @@ namespace NovaV8
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-
+ 
         }
     }
 }

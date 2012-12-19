@@ -131,6 +131,9 @@ namespace NovaV8
 
         private void Reports_FormClosed(object sender, FormClosedEventArgs e)
         {
+            Console.WriteLine("Close DB-Connection...");
+            DBConnector.Instance.GetConnection().Close();
+            Console.WriteLine("Close Application...");
             Application.Exit();
         }
 

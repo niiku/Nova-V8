@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Reflection;
+using System.Windows.Forms;
 
 namespace NovaV8
 {
@@ -31,21 +32,15 @@ namespace NovaV8
                 return default(List<T>);
             }
         }
-         /// <summary>
-         /// Method to execute queries on the database (DDL)
-         /// </summary>
-         /// <param name="sql">Query string</param>
-         /// <returns>Returns the number of rows affected</returns>
+        /// <summary>
+        /// Method to execute queries on the database (DDL)
+        /// </summary>
+        /// <param name="sql">Query string</param>
+        /// <returns>Returns the number of rows affected</returns>
         public static int Exec(String sql)
         {
-            Console.WriteLine(sql);
+            Console.WriteLine("Simplifier Exec: " + sql);
             int count = 0;
-            //Check if the connection is open
-            if (DBConnector.Instance.GetConnection().State != System.Data.ConnectionState.Open)
-            {
-                //Open connection
-                DBConnector.Instance.GetConnection().Open();
-            }
             //Create command
             MySqlCommand command = DBConnector.Instance.GetConnection().CreateCommand();
             //Beginn transaction
@@ -80,15 +75,6 @@ namespace NovaV8
                 {
                     throw new DatabaseException("Error in Rollback {0}", ex);
                 }
-                finally
-                {
-                    //Close the connection in each case
-                    DBConnector.Instance.GetConnection().Close();
-                }
-            }
-            finally
-            {
-                DBConnector.Instance.GetConnection().Close();
             }
             return count;
         }
@@ -100,14 +86,8 @@ namespace NovaV8
         /// <returns>Typed list of each dataset found</returns>
         public static List<T> Query<T>(String query)
         {
-            Console.WriteLine(query);
+            Console.WriteLine("Simplifier Query: " + query);
             MySqlDataReader reader = null;
-            //Check if connection is already open
-            if (DBConnector.Instance.GetConnection().State != System.Data.ConnectionState.Open)
-            {
-                //Open connection
-                DBConnector.Instance.GetConnection().Open();
-            }
             //Create new mysql command
             MySqlCommand command = new MySqlCommand(query, DBConnector.Instance.GetConnection());
             List<T> resultSet = new List<T>();
@@ -124,19 +104,17 @@ namespace NovaV8
             }
             catch (Exception e)
             {
-                throw new DatabaseException("Error query: \"" + query + "\" - {1}", e);
+                Console.WriteLine(e.Message);
+                MessageBox.Show("Abfrage konnte nicht durchgeführt werden.");
             }
             finally
             {
                 if (reader != null)
                 {
-                    //Close the reader
                     reader.Close();
                 }
-                //Close the connection
-                DBConnector.Instance.GetConnection().Close();
             }
-            //Check if there is a result
+
             return resultSet;
         }
 
@@ -176,7 +154,7 @@ namespace NovaV8
             String tableName = obj.GetType().Name;
             //Prepare insert query
             String query = "INSERT INTO " + tableName + "(";
-            char[] comma = new char[1] {','};
+            char[] comma = new char[1] { ',' };
             int c = 0;
             //Iterate over each property
             foreach (PropertyInfo field in fields)
@@ -188,7 +166,7 @@ namespace NovaV8
                 c++;
             }
             //Fill insert query with values
-            query += String.Join(",", paramInfo).TrimEnd(comma) + ") VALUES(" + String.Join(",",paramValue).TrimEnd(comma) + ");";
+            query += String.Join(",", paramInfo).TrimEnd(comma) + ") VALUES(" + String.Join(",", paramValue).TrimEnd(comma) + ");";
             //Returns the last inserted id
             query += "SELECT LAST_INSERT_ID();";
             //Execute the query
@@ -218,7 +196,8 @@ namespace NovaV8
                 {
                     String[] paramValue = new String[fields.Length];
                     int count = 0;
-                    foreach(PropertyInfo field in fields){
+                    foreach (PropertyInfo field in fields)
+                    {
                         paramValue[count] = field.GetValue(objInsert).ToString();
                         count++;
                     }
@@ -292,8 +271,9 @@ namespace NovaV8
             int c = 0;
             foreach (PropertyInfo field in fields)
             {
-                if(c != 0){
-                   query += field.Name.ToString() + "='" + field.GetValue(obj).ToString() + "',";
+                if (c != 0)
+                {
+                    query += field.Name.ToString() + "='" + field.GetValue(obj).ToString() + "',";
                 }
                 c++;
             }
@@ -308,15 +288,19 @@ namespace NovaV8
         /// <typeparam name="T"></typeparam>
         /// <param name="reader"></param>
         /// <returns></returns>
-        public static T CreateObject<T>(MySqlDataReader reader) {
+        public static T CreateObject<T>(MySqlDataReader reader)
+        {
             PropertyInfo[] fields = typeof(T).GetProperties();
             T instance = Activator.CreateInstance<T>();
             foreach (PropertyInfo field in fields)
             {
                 Type fieldType = field.PropertyType;
-                if(fieldType.IsFrameworkType()){
+                if (fieldType.IsFrameworkType())
+                {
                     typeof(T).GetProperty(field.Name).SetValue(instance, Convert.ChangeType(reader[field.Name], field.PropertyType));
-                }/*else {
+                }/*
+                  * This code above would load all relations. But we liked it wannabe lazy ;-) so we implemented some methods in the DAOs
+                  * else {
                     Type genericListType = typeof(List<>);
                     Type specificListType = genericListType.MakeGenericType(fieldType);
                     Object list = Activator.CreateInstance(specificListType);
