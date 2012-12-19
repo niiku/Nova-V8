@@ -129,6 +129,16 @@ namespace NovaV8
             new Staff(this).ShowDialog();
         }
 
+        private void Reports_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void beendenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
 
 
     }

@@ -5,15 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using System.Configuration;
 
 namespace NovaV8
 {
     public class DBConnector
     {
-        private String server = "localhost";
-        private String database = "novav8";
-        private String user = "root";
-        private String password = "";
+        private String server = ConfigurationManager.AppSettings.Get("host");
+        private String database = ConfigurationManager.AppSettings.Get("database");
+        private String user = ConfigurationManager.AppSettings.Get("user");
+        private String password = ConfigurationManager.AppSettings.Get("password");
 
         String connectionString;
 

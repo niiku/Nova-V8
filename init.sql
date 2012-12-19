@@ -230,8 +230,8 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `novav8`;
-INSERT INTO `novav8`.`Profile` (`id`, `name`) VALUES (NULL, 'administrator');
-INSERT INTO `novav8`.`Profile` (`id`, `name`) VALUES (NULL, 'moderator');
+INSERT INTO `novav8`.`Profile` (`id`, `name`) VALUES (NULL, 'Administrator');
+INSERT INTO `novav8`.`Profile` (`id`, `name`) VALUES (NULL, 'Moderator');
 
 COMMIT;
 
