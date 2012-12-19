@@ -21,8 +21,16 @@ namespace NovaV8
         
         }
 
+        private void loadPermissions()
+        {   
+            btnNewPermission.Enabled = Utils.currentUser.hasPermissionForComponent(Component.ADD_PERMISSION);
+            delete.Visible = Utils.currentUser.hasPermissionForComponent(Component.EDIT_PERMISSION);
+            edit.Visible = delete.Visible;
+        }
+
         public void refreshView()
         {
+            loadPermissions();
             authorityView.Rows.Clear();
             for (int i = 2; i < count; i++)
             {

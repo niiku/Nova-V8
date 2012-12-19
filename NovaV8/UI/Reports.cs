@@ -22,9 +22,18 @@ namespace NovaV8
 
         public void loadPermissions()
         {
-            btnNewReport.Enabled = Utils.currentUser.hasPermissionForComponent(Component.ADD_REPORT);
-            permissionMenuItem.Visible =  Utils.currentUser.hasPermissionForComponent(Component.EDIT_PERMISSION) || Utils.currentUser.hasPermissionForComponent(Component.ADD_PERMISSION);
-            stammdatenMenuItem.Visible = Utils.currentUser.hasPermissionForComponent(Component.SHOW_STAMMDATEN);
+            List<Component> components = Utils.currentUser.Profile().Components();
+            List<int> compNumbers = new List<int>();
+            foreach (Component c in components)
+            {
+                compNumbers.Add(c.id);
+            }
+            btnNewReport.Enabled = compNumbers.Contains(Component.ADD_REPORT);
+            permissionMenuItem.Visible = compNumbers.Contains(Component.EDIT_PERMISSION) || compNumbers.Contains(Component.ADD_PERMISSION);
+            stammdatenMenuItem.Visible = compNumbers.Contains(Component.SHOW_STAMMDATEN);
+            edit.Visible = compNumbers.Contains(Component.EDIT_REPORT);
+            delete.Visible = compNumbers.Contains(Component.EDIT_REPORT);
+
 
         }
 
@@ -34,16 +43,25 @@ namespace NovaV8
         {
             loadPermissions();
             reportsView.Rows.Clear();
-            foreach (Report r in ReportService.FindReportsByProject((Project)cbProject.SelectedItem))
+            Project selectedProject = (Project)cbProject.SelectedItem;
+            Task selectedTask = (Task)cbTasks.SelectedValue;
+            List<Report> reports = selectedTask != null && selectedTask.id != 0 ? ReportService.FindReportsByProjectAndTask(selectedProject, selectedTask) : ReportService.FindReportsByProject(selectedProject);
+            foreach (Report r in reports)
             {
                 reportsView.Rows.Add(r.id, r.date.ToString("dd.MM.yyy"), r.description, r.expenditure, r.Task().name, r.Project().Customer().name, r.User().name, r.Project().name);
             }
-            
+
         }
 
         private void Reports_Load(object sender, EventArgs e)
         {
             cbCustomer.DataSource = CustomerService.FindAll();
+            Task empty = new Task();
+            empty.name = "";
+            List<Task> tasks = new List<Task>();
+            tasks.Add(empty);
+            tasks.AddRange(TaskService.FindAll());
+            cbTasks.DataSource = tasks;
         }
 
         private void cbCustomer_SelectedIndexChanged(object sender, EventArgs e)
@@ -65,18 +83,24 @@ namespace NovaV8
 
         private void reportsView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Report r = ReportService.FindById<Report>(Convert.ToInt64(reportsView.Rows[e.RowIndex].Cells[0].Value));
-            if (e.ColumnIndex == 9)
+            Console.WriteLine("Clicked ReportsTable on Row: " + e.RowIndex);
+            if (e.RowIndex != -1)
             {
-                ReportForm reportForm = new ReportForm(this);
-                reportForm.setReport(r);
-                reportForm.Visible = true;
+
+                Report r = ReportService.FindById<Report>(Convert.ToInt64(reportsView.Rows[e.RowIndex].Cells[0].Value));
+                if (e.ColumnIndex == 9)
+                {
+                    ReportForm reportForm = new ReportForm(this);
+                    reportForm.setReport(r);
+                    reportForm.Visible = true;
+                }
+                else if (e.ColumnIndex == 8)
+                {
+                    Simplifier.delete(r);
+                }
+                refreshView();
+
             }
-            else if (e.ColumnIndex == 8)
-            {
-                Simplifier.delete(r);
-            }
-            refreshView();
         }
         private static Info info = new Info();
         private void infoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -92,6 +116,17 @@ namespace NovaV8
                 profileUi = new ProfileOverview(this);
             }
             profileUi.ShowDialog();
+        }
+
+        private void cbTasks_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            refreshView();
+        }
+
+        private void staffMenuItem_Click(object sender, EventArgs e)
+        {
+
+            new Staff(this).ShowDialog();
         }
 
 

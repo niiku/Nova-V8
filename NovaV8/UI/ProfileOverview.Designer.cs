@@ -45,9 +45,9 @@
             this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogin.Location = new System.Drawing.Point(12, 12);
             this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(273, 39);
+            this.lblLogin.Size = new System.Drawing.Size(121, 39);
             this.lblLogin.TabIndex = 2;
-            this.lblLogin.Text = "Berechtigungen";
+            this.lblLogin.Text = "Rollen";
             // 
             // authorityView
             // 
@@ -123,7 +123,7 @@
             this.Controls.Add(this.authorityView);
             this.Controls.Add(this.lblLogin);
             this.Name = "ProfileOverview";
-            this.Text = "Berechtigungen verwalten";
+            this.Text = "Rollen";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formClosing);
             this.Load += new System.EventHandler(this.Profil_Load);
             ((System.ComponentModel.ISupportInitialize)(this.authorityView)).EndInit();
