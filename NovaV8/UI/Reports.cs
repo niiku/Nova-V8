@@ -12,29 +12,27 @@ namespace NovaV8
 {
     public partial class Reports : Form
     {
+        private LoginForm parent;
 
-        public Reports()
+        public Reports(LoginForm parent)
         {
             InitializeComponent();
             loadPermissions();
-
+            this.parent = parent;
         }
 
         public void loadPermissions()
         {
-            List<Component> components = Utils.currentUser.Profile().Components();
-            List<int> compNumbers = new List<int>();
-            foreach (Component c in components)
-            {
-                compNumbers.Add(c.id);
-            }
+            List<int> compNumbers = Utils.currentUser.AllComponentIds();
             btnNewReport.Enabled = compNumbers.Contains(Component.ADD_REPORT);
-            permissionMenuItem.Visible = compNumbers.Contains(Component.EDIT_PERMISSION) || compNumbers.Contains(Component.ADD_PERMISSION);
-            stammdatenMenuItem.Visible = compNumbers.Contains(Component.SHOW_STAMMDATEN);
+            roleMenu.Visible = compNumbers.Contains(Component.EDIT_PERMISSION) || compNumbers.Contains(Component.ADD_PERMISSION);
+            employeeMenu.Visible = compNumbers.Contains(Component.SHOW_STAMMDATEN);
+            projectMenu.Visible = compNumbers.Contains(Component.SHOW_STAMMDATEN);
+            customerMenu.Visible = compNumbers.Contains(Component.SHOW_STAMMDATEN);
+            taskMenu.Visible = compNumbers.Contains(Component.SHOW_STAMMDATEN);
             edit.Visible = compNumbers.Contains(Component.EDIT_REPORT);
             delete.Visible = compNumbers.Contains(Component.EDIT_REPORT);
-
-
+            stammdatenMenu.Visible = roleMenu.Visible || compNumbers.Contains(Component.SHOW_STAMMDATEN);
         }
 
 
@@ -108,25 +106,14 @@ namespace NovaV8
             info.Visible = true;
         }
 
-        private ProfileOverview profileUi;
         private void optionenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (profileUi == null)
-            {
-                profileUi = new ProfileOverview(this);
-            }
-            profileUi.ShowDialog();
+
         }
 
         private void cbTasks_SelectedIndexChanged(object sender, EventArgs e)
         {
             refreshView();
-        }
-
-        private void staffMenuItem_Click(object sender, EventArgs e)
-        {
-
-            new Staff(this).ShowDialog();
         }
 
         private void Reports_FormClosed(object sender, FormClosedEventArgs e)
@@ -135,11 +122,51 @@ namespace NovaV8
             DBConnector.Instance.GetConnection().Close();
             Console.WriteLine("Close Application...");
             Application.Exit();
+
         }
 
         private void beendenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void mitarbeiterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Staff(this).ShowDialog(); 
+        }
+
+        private void kundenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new NovaV8.UI.Customer(this).ShowDialog();
+        }
+
+        private ProfileOverview profileUi;
+
+        private void rollenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (profileUi == null)
+            {
+                profileUi = new ProfileOverview(this);
+            }
+            profileUi.ShowDialog();
+        }
+
+        private void projectMenu_Click(object sender, EventArgs e)
+        {
+            new Projects(this).ShowDialog();
+        }
+
+        private void taskMenu_Click(object sender, EventArgs e)
+        {
+            new Tasks(this).ShowDialog();
+        }
+
+        private void logoutMenu_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            Utils.currentUser = null;
+            parent.ClearLoginFields();
+            parent.Visible = true;
         }
 
 

@@ -38,6 +38,17 @@ namespace NovaV8
 
         }
 
+        public List<int> AllComponentIds()
+        {
+
+            List<int> ids = new List<int>();
+            foreach (Component c in Profile().Components())
+            {
+                ids.Add(c.id);
+            }
+            return ids;
+        }
+
 
         public bool rightPassword(string password)
         {

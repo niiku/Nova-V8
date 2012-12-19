@@ -12,6 +12,8 @@ namespace NovaV8
 {
     public partial class LoginForm : Form
     {
+
+        private Reports reports;
         public LoginForm()
         {
             InitializeComponent();
@@ -39,13 +41,26 @@ namespace NovaV8
             // Falls alles OK
             Utils.currentUser = user;
             base.Hide();
-            Reports reports = new Reports();
+            if (reports == null)
+            {
+                reports = new Reports(this);
+            }
+            else
+            {
+                reports.refreshView();
+            }
             reports.Visible = true;
         }
 
-        private void LoginForm_Load(object sender, EventArgs e)
+        public void ClearLoginFields()
         {
- 
+            username.Clear();
+            password.Clear();
+        }
+
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

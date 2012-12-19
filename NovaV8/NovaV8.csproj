@@ -86,11 +86,23 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Customer.Designer.cs">
+      <DependentUpon>Customer.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Info.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Info.Designer.cs">
       <DependentUpon>Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Projects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Projects.Designer.cs">
+      <DependentUpon>Projects.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Staff.cs">
       <SubType>Form</SubType>
@@ -130,12 +142,24 @@
     <Compile Include="UI\ReportForm.Designer.cs">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Tasks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Tasks.Designer.cs">
+      <DependentUpon>Tasks.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Customer.resx">
+      <DependentUpon>Customer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Info.resx">
       <DependentUpon>Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Projects.resx">
+      <DependentUpon>Projects.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Staff.resx">
       <DependentUpon>Staff.cs</DependentUpon>
@@ -164,6 +188,9 @@
     </Compile>
     <EmbeddedResource Include="UI\ReportForm.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Tasks.resx">
+      <DependentUpon>Tasks.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\DataSources\User.datasource" />
