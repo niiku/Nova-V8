@@ -36,14 +36,13 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.beendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.permissionMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stammdatenMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stammdatenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mitarbeiterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kundenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.projekteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aufgabenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stammdatenMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.employeeMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.customerMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.projectMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.taskMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.roleMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsView = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,6 +57,7 @@
             this.btnNewReport = new System.Windows.Forms.Button();
             this.cbTasks = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.logoutMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reportsView)).BeginInit();
             this.SuspendLayout();
@@ -117,10 +117,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dateiToolStripMenuItem,
-            this.permissionMenuItem,
-            this.stammdatenMenuItem,
             this.infoMenuItem,
-            this.stammdatenToolStripMenuItem});
+            this.stammdatenMenu});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1128, 24);
@@ -130,6 +128,7 @@
             // dateiToolStripMenuItem
             // 
             this.dateiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.logoutMenu,
             this.beendenToolStripMenuItem});
             this.dateiToolStripMenuItem.Name = "dateiToolStripMenuItem";
             this.dateiToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
@@ -142,20 +141,6 @@
             this.beendenToolStripMenuItem.Text = "&Beenden";
             this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
             // 
-            // permissionMenuItem
-            // 
-            this.permissionMenuItem.Name = "permissionMenuItem";
-            this.permissionMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.permissionMenuItem.Text = "&Rollen";
-            this.permissionMenuItem.Click += new System.EventHandler(this.optionenToolStripMenuItem_Click);
-            // 
-            // stammdatenMenuItem
-            // 
-            this.stammdatenMenuItem.Name = "stammdatenMenuItem";
-            this.stammdatenMenuItem.Size = new System.Drawing.Size(77, 20);
-            this.stammdatenMenuItem.Text = "&Mitarbeiter";
-            this.stammdatenMenuItem.Click += new System.EventHandler(this.staffMenuItem_Click);
-            // 
             // infoMenuItem
             // 
             this.infoMenuItem.Name = "infoMenuItem";
@@ -163,40 +148,52 @@
             this.infoMenuItem.Text = "&Info";
             this.infoMenuItem.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
             // 
-            // stammdatenToolStripMenuItem
+            // stammdatenMenu
             // 
-            this.stammdatenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mitarbeiterToolStripMenuItem,
-            this.kundenToolStripMenuItem,
-            this.projekteToolStripMenuItem,
-            this.aufgabenToolStripMenuItem});
-            this.stammdatenToolStripMenuItem.Name = "stammdatenToolStripMenuItem";
-            this.stammdatenToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
-            this.stammdatenToolStripMenuItem.Text = "Stammdaten";
+            this.stammdatenMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.employeeMenu,
+            this.customerMenu,
+            this.projectMenu,
+            this.taskMenu,
+            this.roleMenu});
+            this.stammdatenMenu.Name = "stammdatenMenu";
+            this.stammdatenMenu.Size = new System.Drawing.Size(87, 20);
+            this.stammdatenMenu.Text = "Stammdaten";
             // 
-            // mitarbeiterToolStripMenuItem
+            // employeeMenu
             // 
-            this.mitarbeiterToolStripMenuItem.Name = "mitarbeiterToolStripMenuItem";
-            this.mitarbeiterToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
-            this.mitarbeiterToolStripMenuItem.Text = "Mitarbeiter";
+            this.employeeMenu.Name = "employeeMenu";
+            this.employeeMenu.Size = new System.Drawing.Size(152, 22);
+            this.employeeMenu.Text = "Mitarbeiter";
+            this.employeeMenu.Click += new System.EventHandler(this.mitarbeiterToolStripMenuItem_Click);
             // 
-            // kundenToolStripMenuItem
+            // customerMenu
             // 
-            this.kundenToolStripMenuItem.Name = "kundenToolStripMenuItem";
-            this.kundenToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
-            this.kundenToolStripMenuItem.Text = "Kunden";
+            this.customerMenu.Name = "customerMenu";
+            this.customerMenu.Size = new System.Drawing.Size(152, 22);
+            this.customerMenu.Text = "Kunden";
+            this.customerMenu.Click += new System.EventHandler(this.kundenToolStripMenuItem_Click);
             // 
-            // projekteToolStripMenuItem
+            // projectMenu
             // 
-            this.projekteToolStripMenuItem.Name = "projekteToolStripMenuItem";
-            this.projekteToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
-            this.projekteToolStripMenuItem.Text = "Projekte";
+            this.projectMenu.Name = "projectMenu";
+            this.projectMenu.Size = new System.Drawing.Size(152, 22);
+            this.projectMenu.Text = "Projekte";
+            this.projectMenu.Click += new System.EventHandler(this.projectMenu_Click);
             // 
-            // aufgabenToolStripMenuItem
+            // taskMenu
             // 
-            this.aufgabenToolStripMenuItem.Name = "aufgabenToolStripMenuItem";
-            this.aufgabenToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
-            this.aufgabenToolStripMenuItem.Text = "Aufgaben";
+            this.taskMenu.Name = "taskMenu";
+            this.taskMenu.Size = new System.Drawing.Size(152, 22);
+            this.taskMenu.Text = "Aufgaben";
+            this.taskMenu.Click += new System.EventHandler(this.taskMenu_Click);
+            // 
+            // roleMenu
+            // 
+            this.roleMenu.Name = "roleMenu";
+            this.roleMenu.Size = new System.Drawing.Size(152, 22);
+            this.roleMenu.Text = "Rollen";
+            this.roleMenu.Click += new System.EventHandler(this.rollenToolStripMenuItem_Click);
             // 
             // reportsView
             // 
@@ -309,6 +306,13 @@
             this.label1.TabIndex = 22;
             this.label1.Text = "Aufgaben";
             // 
+            // logoutMenu
+            // 
+            this.logoutMenu.Name = "logoutMenu";
+            this.logoutMenu.Size = new System.Drawing.Size(152, 22);
+            this.logoutMenu.Text = "Abmelden";
+            this.logoutMenu.Click += new System.EventHandler(this.logoutMenu_Click);
+            // 
             // Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -348,8 +352,6 @@
         private System.Windows.Forms.Button btnNewReport;
         private System.Windows.Forms.ToolStripMenuItem dateiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem beendenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem permissionMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem stammdatenMenuItem;
         private System.Windows.Forms.ToolStripMenuItem infoMenuItem;
         private System.Windows.Forms.ComboBox cbTasks;
         private System.Windows.Forms.Label label1;
@@ -363,10 +365,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn project;
         private System.Windows.Forms.DataGridViewButtonColumn delete;
         private System.Windows.Forms.DataGridViewButtonColumn edit;
-        private System.Windows.Forms.ToolStripMenuItem stammdatenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mitarbeiterToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem kundenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem projekteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aufgabenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stammdatenMenu;
+        private System.Windows.Forms.ToolStripMenuItem employeeMenu;
+        private System.Windows.Forms.ToolStripMenuItem customerMenu;
+        private System.Windows.Forms.ToolStripMenuItem projectMenu;
+        private System.Windows.Forms.ToolStripMenuItem taskMenu;
+        private System.Windows.Forms.ToolStripMenuItem roleMenu;
+        private System.Windows.Forms.ToolStripMenuItem logoutMenu;
     }
 }

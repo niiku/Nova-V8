@@ -1,6 +1,6 @@
 ﻿namespace NovaV8
 {
-    partial class Staff
+    partial class Tasks
     {
         /// <summary>
         /// Required designer variable.
@@ -28,41 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.lblLogin = new System.Windows.Forms.Label();
-            this.tbStaff = new System.Windows.Forms.DataGridView();
+            this.tbTasks = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Benutzername = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rolle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.tbStaff)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbTasks)).BeginInit();
             this.SuspendLayout();
             // 
             // lblLogin
             // 
             this.lblLogin.AutoSize = true;
             this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin.Location = new System.Drawing.Point(12, 19);
+            this.lblLogin.Location = new System.Drawing.Point(12, 9);
             this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(193, 39);
-            this.lblLogin.TabIndex = 1;
-            this.lblLogin.Text = "Mitarbeiter";
+            this.lblLogin.Size = new System.Drawing.Size(172, 39);
+            this.lblLogin.TabIndex = 2;
+            this.lblLogin.Text = "Aufgaben";
             // 
-            // tbStaff
+            // tbTasks
             // 
-            this.tbStaff.AllowUserToAddRows = false;
-            this.tbStaff.AllowUserToDeleteRows = false;
-            this.tbStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tbStaff.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tbTasks.AllowUserToAddRows = false;
+            this.tbTasks.AllowUserToDeleteRows = false;
+            this.tbTasks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tbTasks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.Benutzername,
             this.Rolle});
-            this.tbStaff.Location = new System.Drawing.Point(19, 72);
-            this.tbStaff.Name = "tbStaff";
-            this.tbStaff.ReadOnly = true;
-            this.tbStaff.Size = new System.Drawing.Size(353, 270);
-            this.tbStaff.TabIndex = 2;
+            this.tbTasks.Location = new System.Drawing.Point(19, 51);
+            this.tbTasks.Name = "tbTasks";
+            this.tbTasks.ReadOnly = true;
+            this.tbTasks.Size = new System.Drawing.Size(353, 307);
+            this.tbTasks.TabIndex = 3;
             // 
             // Id
             // 
@@ -72,32 +69,27 @@
             // 
             // Benutzername
             // 
-            this.Benutzername.HeaderText = "Benutzername";
+            this.Benutzername.HeaderText = "Name";
             this.Benutzername.Name = "Benutzername";
             this.Benutzername.ReadOnly = true;
             // 
             // Rolle
             // 
-            this.Rolle.HeaderText = "Rolle";
+            this.Rolle.HeaderText = "Beschreibung";
             this.Rolle.Name = "Rolle";
             this.Rolle.ReadOnly = true;
             // 
-            // userBindingSource
-            // 
-            this.userBindingSource.DataSource = typeof(NovaV8.User);
-            // 
-            // Staff
+            // Tasks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(394, 370);
-            this.Controls.Add(this.tbStaff);
+            this.Controls.Add(this.tbTasks);
             this.Controls.Add(this.lblLogin);
-            this.Name = "Staff";
-            this.Text = "Mitarbeiter";
-            this.Load += new System.EventHandler(this.ProfilForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.tbStaff)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
+            this.Name = "Tasks";
+            this.Text = "Aufgaben";
+            this.Load += new System.EventHandler(this.Tasks_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.tbTasks)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,8 +98,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblLogin;
-        private System.Windows.Forms.DataGridView tbStaff;
-        private System.Windows.Forms.BindingSource userBindingSource;
+        private System.Windows.Forms.DataGridView tbTasks;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Benutzername;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rolle;

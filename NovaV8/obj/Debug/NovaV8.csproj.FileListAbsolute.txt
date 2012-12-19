@@ -13,3 +13,22 @@ C:\Users\niiku\Documents\Visual Studio 2012\Projects\NovaV8\NovaV8\bin\Debug\Win
 C:\Users\niiku\Documents\Visual Studio 2012\Projects\NovaV8\NovaV8\bin\Debug\WindowsFormsApplication1.pdb
 C:\Users\niiku\Documents\Visual Studio 2012\Projects\NovaV8\NovaV8\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\niiku\Documents\Visual Studio 2012\Projects\NovaV8\NovaV8\obj\Debug\WindowsFormsApplication1.pdb
+C:\dev\view\Nova-V8\NovaV8\bin\Debug\WindowsFormsApplication1.exe.config
+C:\dev\view\Nova-V8\NovaV8\obj\Debug\WindowsFormsApplication1.exe
+C:\dev\view\Nova-V8\NovaV8\obj\Debug\WindowsFormsApplication1.pdb
+C:\dev\view\Nova-V8\NovaV8\bin\Debug\WindowsFormsApplication1.exe
+C:\dev\view\Nova-V8\NovaV8\bin\Debug\WindowsFormsApplication1.pdb
+C:\dev\view\Nova-V8\NovaV8\obj\Debug\NovaV8.csprojResolveAssemblyReference.cache
+C:\dev\view\Nova-V8\NovaV8\obj\Debug\NovaV8.Form1.resources
+C:\dev\view\Nova-V8\NovaV8\obj\Debug\NovaV8.Info.resources
+C:\dev\view\Nova-V8\NovaV8\obj\Debug\NovaV8.Staff.resources
+C:\dev\view\Nova-V8\NovaV8\obj\Debug\NovaV8.ProfileOverview.resources
+C:\dev\view\Nova-V8\NovaV8\obj\Debug\NovaV8.ProfilForm.resources
+C:\dev\view\Nova-V8\NovaV8\obj\Debug\NovaV8.Reports.resources
+C:\dev\view\Nova-V8\NovaV8\obj\Debug\NovaV8.LoginForm.resources
+C:\dev\view\Nova-V8\NovaV8\obj\Debug\NovaV8.Properties.Resources.resources
+C:\dev\view\Nova-V8\NovaV8\obj\Debug\NovaV8.ReportForm.resources
+C:\dev\view\Nova-V8\NovaV8\obj\Debug\NovaV8.csproj.GenerateResource.Cache
+C:\dev\view\Nova-V8\NovaV8\obj\Debug\NovaV8.UI.Customer.resources
+C:\dev\view\Nova-V8\NovaV8\obj\Debug\NovaV8.Projects.resources
+C:\dev\view\Nova-V8\NovaV8\obj\Debug\NovaV8.Tasks.resources

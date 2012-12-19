@@ -124,7 +124,7 @@
             this.Controls.Add(this.lblLogin);
             this.Name = "LoginForm";
             this.Text = "Anmelden";
-            this.Load += new System.EventHandler(this.LoginForm_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
