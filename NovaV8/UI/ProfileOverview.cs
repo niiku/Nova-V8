@@ -10,31 +10,41 @@ using System.Windows.Forms;
 
 namespace NovaV8
 {
-    public partial class Profil : Form
+    public partial class ProfileOverview : Form
     {
         private int count;
-
-        public Profil()
+        private Reports reports;
+        public ProfileOverview(Reports reports)
         {
             InitializeComponent();
+            this.reports = reports;
+        
+        }
+
+        private void loadPermissions()
+        {   
+            btnNewPermission.Enabled = Utils.currentUser.hasPermissionForComponent(Component.ADD_PERMISSION);
+            delete.Visible = Utils.currentUser.hasPermissionForComponent(Component.EDIT_PERMISSION);
+            edit.Visible = delete.Visible;
         }
 
         public void refreshView()
         {
+            loadPermissions();
             authorityView.Rows.Clear();
             for (int i = 2; i < count; i++)
             {
                 authorityView.Columns.RemoveAt(2);
             }
             count = 2;
-            List<Component> components = ComponentService.FindAll();
-            foreach (Component c in components)
-            {
-                DataGridViewCheckBoxColumn column = new DataGridViewCheckBoxColumn();
-                column.HeaderText = c.name;
-                authorityView.Columns.Insert(count, column);
-                count++;
-            }
+            //List<Component> components = ComponentService.FindAll();
+            //foreach (Component c in components)
+            //{
+            //    DataGridViewCheckBoxColumn column = new DataGridViewCheckBoxColumn();
+            //    column.HeaderText = c.name;
+            //    authorityView.Columns.Insert(count, column);
+            //    count++;
+            //}
             foreach (Profile p in ProfileService.FindAll())
             {
                 DataGridViewRow row = new DataGridViewRow();
@@ -44,20 +54,20 @@ namespace NovaV8
                 id.Value = p.id;
                 row.Cells.Add(id);
                 row.Cells.Add(rolename);
-                foreach (Component c in components)
-                {
-                    DataGridViewCheckBoxCell permission = new DataGridViewCheckBoxCell();
-                    permission.Value = false;
-                    foreach (Component pc in p.Components())
-                    {
-                        if (c.id.Equals(pc.id))
-                        {
-                            permission.Value = true;
-                            break;
-                        }
-                    }
-                    row.Cells.Add(permission);
-                }
+                //foreach (Component c in components)
+                //{
+                //    DataGridViewCheckBoxCell permission = new DataGridViewCheckBoxCell();
+                //    permission.Value = false;
+                //    foreach (Component pc in p.Components())
+                //    {
+                //        if (c.id.Equals(pc.id))
+                //        {
+                //            permission.Value = true;
+                //            break;
+                //        }
+                //    }
+                //    row.Cells.Add(permission);
+                //}
                 authorityView.Rows.Add(row);
             }
 
@@ -79,8 +89,11 @@ namespace NovaV8
             Profile p = ProfileService.FindById<Profile>(Convert.ToInt64(authorityView.Rows[e.RowIndex].Cells[0].Value));
             if (e.ColumnIndex == count)
             {
-                Simplifier.delete(p);
-            }
+                if (MessageBox.Show("Soll diese Berechtigung gelöscht werden? Alle Benutzer, welche diese Berechtigung besitzen, werden auch gelöschen!", "Ganz sicher", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    Simplifier.delete(p);
+                }
+                }
             else if (e.ColumnIndex == count+1)
             {
                 ProfilForm profileForm = new ProfilForm(this);
@@ -96,6 +109,18 @@ namespace NovaV8
             profileForm.Visible = true;
         }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+
+        private void formClosing(object sender, FormClosingEventArgs e)
+        {
+            reports.refreshView();
+            Console.WriteLine("YUHU");
+        }
 
     }
 }

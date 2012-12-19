@@ -13,7 +13,7 @@ namespace NovaV8
     public partial class ProfilForm : Form
     {
         private Form parent;
-        private Profile profile;
+        private Profile profile = new Profile();
 
         public ProfilForm(Form parent)
         {
@@ -33,19 +33,14 @@ namespace NovaV8
 
         private void btSave_Click(object sender, EventArgs e)
         {
-            Profile p = new Profile();
-            p.name = tbRolename.Text;
-            if (profile != null)
+            if (tbRolename.Text.Trim().Equals(""))
             {
-                if (profile.id != 0)
-                {
-                    p.id = profile.id;
-                }
+                MessageBox.Show("Bitte einen Rollennamen angeben");
+                return;
             }
-            else
-            {
-                Simplifier.insertOrUpdate(p);
-            }
+            profile.name = tbRolename.Text;
+            Simplifier.insertOrUpdate(profile);
+
             foreach (DataGridViewRow row in componentsView.Rows)
             {
                 Component c = new Component();
@@ -53,14 +48,15 @@ namespace NovaV8
                 c.name = row.Cells[1].Value.ToString();
                 if ((bool)row.Cells[2].Value)
                 {
-                    p.setComponent(c);
+                    profile.setComponent(c);
                 }
                 else
                 {
-                    p.removeComponent(c);
+                    profile.removeComponent(c);
                 }
             }
-            ((Profil)this.parent).refreshView();
+
+            ((ProfileOverview)this.parent).refreshView();
             this.Close();
         }
 
@@ -90,7 +86,7 @@ namespace NovaV8
                     componentsView.Rows.Add(c.id, c.name, false);
                 }
             }
-            
+
         }
 
 

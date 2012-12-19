@@ -30,7 +30,7 @@ namespace NovaV8
 
         public void setProject(Project project)
         {
-            this.project = project.id;       
+            this.project = project.id;
             Simplifier.insertOrUpdate(project);
         }
 
@@ -42,7 +42,9 @@ namespace NovaV8
 
         public void setUser(User user)
         {
+
             this.user = user.id;
+
             Simplifier.insertOrUpdate(user);
         }
     }

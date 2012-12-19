@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\Permission.cs" />
     <Compile Include="DAO\Task.cs" />
     <Compile Include="DAO\User.cs" />
     <Compile Include="DAO\Component.cs" />
@@ -70,6 +71,8 @@
     <Compile Include="Database\ResultNotFoundException.cs" />
     <Compile Include="Database\Simplifier.cs" />
     <Compile Include="Database\TypeExtensions.cs" />
+    <Compile Include="Service\ComponentService.cs" />
+    <Compile Include="Service\PermissionService.cs" />
     <Compile Include="Service\ProfileService.cs" />
     <Compile Include="Service\TaskService.cs" />
     <Compile Include="Service\UserService.cs" />
@@ -81,6 +84,18 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Info.Designer.cs">
+      <DependentUpon>Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Staff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Staff.Designer.cs">
+      <DependentUpon>Staff.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\ProfileOverview.cs">
       <SubType>Form</SubType>
@@ -118,6 +133,12 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Info.resx">
+      <DependentUpon>Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Staff.resx">
+      <DependentUpon>Staff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\ProfileOverview.resx">
       <DependentUpon>ProfileOverview.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,6 +165,7 @@
       <DependentUpon>ReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\DataSources\User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

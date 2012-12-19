@@ -209,7 +209,6 @@ INSERT INTO `novav8`.`Project` (`id`, `number`, `name`, `customer`, `begin`, `ac
 INSERT INTO `novav8`.`Project` (`id`, `number`, `name`, `customer`, `begin`, `active`) VALUES (NULL, '3000', 'Neues Huhn für BIO Werbung', 3, '2013-05-12', 0);
 INSERT INTO `novav8`.`Project` (`id`, `number`, `name`, `customer`, `begin`, `active`) VALUES (NULL, '4000', 'Neues Cooplogo für Filiale in Bangladesh', 4, '2013-06-12', 0);
 INSERT INTO `novav8`.`Project` (`id`, `number`, `name`, `customer`, `begin`, `active`) VALUES (NULL, '5000', 'Fusion mit Post', 5, '2013-07-12', 1);
-INSERT INTO `novav8`.`Project` (`id`, `number`, `name`, `customer`, `begin`, `active`) VALUES (NULL, NULL, NULL, NULL, '', NULL);
 
 COMMIT;
 
@@ -231,8 +230,8 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `novav8`;
-INSERT INTO `novav8`.`Profile` (`id`, `name`) VALUES (NULL, 'moderator');
 INSERT INTO `novav8`.`Profile` (`id`, `name`) VALUES (NULL, 'administrator');
+INSERT INTO `novav8`.`Profile` (`id`, `name`) VALUES (NULL, 'moderator');
 
 COMMIT;
 
@@ -259,7 +258,6 @@ INSERT INTO `novav8`.`Report` (`id`, `date`, `task`, `description`, `project`, `
 INSERT INTO `novav8`.`Report` (`id`, `date`, `task`, `description`, `project`, `expenditure`, `user`) VALUES (NULL, '2012-04-12', 3, 'Ich habe das gemacht', 3, 765, 3);
 INSERT INTO `novav8`.`Report` (`id`, `date`, `task`, `description`, `project`, `expenditure`, `user`) VALUES (NULL, '2012-05-12', 4, 'Ich habe das gemacht', 4, 45, 4);
 INSERT INTO `novav8`.`Report` (`id`, `date`, `task`, `description`, `project`, `expenditure`, `user`) VALUES (NULL, '2012-06-12', 5, 'Ich habe das gemacht', 5, 97, 5);
-INSERT INTO `novav8`.`Report` (`id`, `date`, `task`, `description`, `project`, `expenditure`, `user`) VALUES (NULL, NULL, NULL, NULL, NULL, , NULL);
 
 COMMIT;
 
@@ -276,6 +274,9 @@ INSERT INTO `novav8`.`Component` (`id`, `name`) VALUES (NULL, 'Kunde hinzufügen'
 INSERT INTO `novav8`.`Component` (`id`, `name`) VALUES (NULL, 'Kunde bearbeiten');
 INSERT INTO `novav8`.`Component` (`id`, `name`) VALUES (NULL, 'Task hinzufügen');
 INSERT INTO `novav8`.`Component` (`id`, `name`) VALUES (NULL, 'Task bearbeiten');
+INSERT INTO `novav8`.`Component` (`id`, `name`) VALUES (NULL, 'Berechtigung hinzufügen');
+INSERT INTO `novav8`.`Component` (`id`, `name`) VALUES (NULL, 'Berechtigung bearbeiten');
+INSERT INTO `novav8`.`Component` (`id`, `name`) VALUES (NULL, 'Stammdaten anzeigen');
 
 COMMIT;
 
@@ -286,7 +287,10 @@ START TRANSACTION;
 USE `novav8`;
 INSERT INTO `novav8`.`Permission` (`id`, `component`, `profile`) VALUES (NULL, 1, 1);
 INSERT INTO `novav8`.`Permission` (`id`, `component`, `profile`) VALUES (NULL, 2, 1);
-INSERT INTO `novav8`.`Permission` (`id`, `component`, `profile`) VALUES (NULL, 3, 1);
+INSERT INTO `novav8`.`Permission` (`id`, `component`, `profile`) VALUES (NULL, 1, 1);
+INSERT INTO `novav8`.`Permission` (`id`, `component`, `profile`) VALUES (NULL, 9, 1);
+INSERT INTO `novav8`.`Permission` (`id`, `component`, `profile`) VALUES (NULL, 10, 1);
+INSERT INTO `novav8`.`Permission` (`id`, `component`, `profile`) VALUES (NULL, 11, 1);
 INSERT INTO `novav8`.`Permission` (`id`, `component`, `profile`) VALUES (NULL, 4, 1);
 INSERT INTO `novav8`.`Permission` (`id`, `component`, `profile`) VALUES (NULL, 5, 2);
 INSERT INTO `novav8`.`Permission` (`id`, `component`, `profile`) VALUES (NULL, 6, 2);

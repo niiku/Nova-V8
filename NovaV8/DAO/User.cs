@@ -23,6 +23,8 @@ namespace NovaV8
             return ReportService.FindReportsByUser(this);
         }
 
+
+
         public bool hasPermissionForComponent(long id)
         {
             foreach (Component c in Profile().Components())

@@ -9,6 +9,11 @@ namespace NovaV8
         {
             return Simplifier.Query<Report>("SELECT * FROM REPORT WHERE PROJECT = " + project.id + ";");
         }
+
+        public static List<Report> FindReportsByProjectAndTask(Project project, Task task)
+        {
+            return Simplifier.Query<Report>("SELECT * FROM REPORT WHERE PROJECT = " + project.id + " AND TASK = "+task.id+";");
+        }
         public static Report FindById<Report>(long id)
         {
             return Simplifier.findById<Report>(id);

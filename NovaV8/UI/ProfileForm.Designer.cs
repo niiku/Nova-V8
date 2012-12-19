@@ -53,7 +53,7 @@
             // btSave
             // 
             this.btSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSave.Location = new System.Drawing.Point(317, 339);
+            this.btSave.Location = new System.Drawing.Point(318, 496);
             this.btSave.Name = "btSave";
             this.btSave.Size = new System.Drawing.Size(142, 37);
             this.btSave.TabIndex = 11;
@@ -64,7 +64,7 @@
             // btCancel
             // 
             this.btCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCancel.Location = new System.Drawing.Point(169, 339);
+            this.btCancel.Location = new System.Drawing.Point(170, 496);
             this.btCancel.Name = "btCancel";
             this.btCancel.Size = new System.Drawing.Size(142, 37);
             this.btCancel.TabIndex = 12;
@@ -78,9 +78,9 @@
             this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogin.Location = new System.Drawing.Point(12, 19);
             this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(422, 39);
+            this.lblLogin.Size = new System.Drawing.Size(401, 39);
             this.lblLogin.TabIndex = 1;
-            this.lblLogin.Text = "Berechtigung hinzufügen";
+            this.lblLogin.Text = "Berechtigung verwalten";
             // 
             // tbRolename
             // 
@@ -100,7 +100,7 @@
             this.checkBoxes});
             this.componentsView.Location = new System.Drawing.Point(35, 153);
             this.componentsView.Name = "componentsView";
-            this.componentsView.Size = new System.Drawing.Size(424, 169);
+            this.componentsView.Size = new System.Drawing.Size(424, 337);
             this.componentsView.TabIndex = 21;
             // 
             // id
@@ -122,7 +122,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(495, 397);
+            this.ClientSize = new System.Drawing.Size(481, 546);
             this.Controls.Add(this.componentsView);
             this.Controls.Add(this.tbRolename);
             this.Controls.Add(this.btCancel);
@@ -130,7 +130,7 @@
             this.Controls.Add(this.lblCustomer);
             this.Controls.Add(this.lblLogin);
             this.Name = "ProfilForm";
-            this.Text = "Berechtigung hinzufügen";
+            this.Text = "Berechtigung verwalen";
             this.Load += new System.EventHandler(this.ProfilForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.componentsView)).EndInit();
             this.ResumeLayout(false);

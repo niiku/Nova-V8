@@ -13,7 +13,7 @@ namespace NovaV8
         private String server = "localhost";
         private String database = "novav8";
         private String user = "root";
-        private String password = "root";
+        private String password = "";
 
         String connectionString;
 

@@ -35,11 +35,17 @@
             this.lblProject = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bearbeitenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stammdatenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.beendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.permissionMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stammdatenMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.infoMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsView = new System.Windows.Forms.DataGridView();
             this.btnNewReport = new System.Windows.Forms.Button();
+            this.cbTasks = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.activity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,9 +66,9 @@
             this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogin.Location = new System.Drawing.Point(12, 39);
             this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(147, 39);
+            this.lblLogin.Size = new System.Drawing.Size(315, 39);
             this.lblLogin.TabIndex = 1;
-            this.lblLogin.Text = "Raporte";
+            this.lblLogin.Text = "Raporte verwalten";
             // 
             // lblCustomer
             // 
@@ -109,9 +115,9 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dateiToolStripMenuItem,
-            this.bearbeitenToolStripMenuItem,
-            this.stammdatenToolStripMenuItem,
-            this.hilfeToolStripMenuItem});
+            this.permissionMenuItem,
+            this.stammdatenMenuItem,
+            this.infoMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1128, 24);
@@ -120,27 +126,56 @@
             // 
             // dateiToolStripMenuItem
             // 
+            this.dateiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSeparator,
+            this.toolStripSeparator1,
+            this.toolStripSeparator2,
+            this.beendenToolStripMenuItem});
             this.dateiToolStripMenuItem.Name = "dateiToolStripMenuItem";
             this.dateiToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
-            this.dateiToolStripMenuItem.Text = "Datei";
+            this.dateiToolStripMenuItem.Text = "&Datei";
             // 
-            // bearbeitenToolStripMenuItem
+            // toolStripSeparator
             // 
-            this.bearbeitenToolStripMenuItem.Name = "bearbeitenToolStripMenuItem";
-            this.bearbeitenToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
-            this.bearbeitenToolStripMenuItem.Text = "Bearbeiten";
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(117, 6);
             // 
-            // stammdatenToolStripMenuItem
+            // toolStripSeparator1
             // 
-            this.stammdatenToolStripMenuItem.Name = "stammdatenToolStripMenuItem";
-            this.stammdatenToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
-            this.stammdatenToolStripMenuItem.Text = "Stammdaten";
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(117, 6);
             // 
-            // hilfeToolStripMenuItem
+            // toolStripSeparator2
             // 
-            this.hilfeToolStripMenuItem.Name = "hilfeToolStripMenuItem";
-            this.hilfeToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.hilfeToolStripMenuItem.Text = "Hilfe";
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(117, 6);
+            // 
+            // beendenToolStripMenuItem
+            // 
+            this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.beendenToolStripMenuItem.Text = "&Beenden";
+            // 
+            // permissionMenuItem
+            // 
+            this.permissionMenuItem.Name = "permissionMenuItem";
+            this.permissionMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.permissionMenuItem.Text = "&Rollen";
+            this.permissionMenuItem.Click += new System.EventHandler(this.optionenToolStripMenuItem_Click);
+            // 
+            // stammdatenMenuItem
+            // 
+            this.stammdatenMenuItem.Name = "stammdatenMenuItem";
+            this.stammdatenMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.stammdatenMenuItem.Text = "&Mitarbeiter";
+            this.stammdatenMenuItem.Click += new System.EventHandler(this.staffMenuItem_Click);
+            // 
+            // infoMenuItem
+            // 
+            this.infoMenuItem.Name = "infoMenuItem";
+            this.infoMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.infoMenuItem.Text = "&Info";
+            this.infoMenuItem.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
             // 
             // reportsView
             // 
@@ -174,6 +209,28 @@
             this.btnNewReport.Text = "Hinzufügen";
             this.btnNewReport.UseVisualStyleBackColor = true;
             this.btnNewReport.Click += new System.EventHandler(this.btnNewReport_Click);
+            // 
+            // cbTasks
+            // 
+            this.cbTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTasks.FormattingEnabled = true;
+            this.cbTasks.Items.AddRange(new object[] {
+            "-"});
+            this.cbTasks.Location = new System.Drawing.Point(633, 115);
+            this.cbTasks.Name = "cbTasks";
+            this.cbTasks.Size = new System.Drawing.Size(266, 32);
+            this.cbTasks.TabIndex = 23;
+            this.cbTasks.SelectedIndexChanged += new System.EventHandler(this.cbTasks_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(629, 92);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 20);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Aufgaben";
             // 
             // id
             // 
@@ -236,6 +293,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1128, 651);
+            this.Controls.Add(this.cbTasks);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnNewReport);
             this.Controls.Add(this.reportsView);
             this.Controls.Add(this.menuStrip1);
@@ -263,12 +322,18 @@
         private System.Windows.Forms.ComboBox cbProject;
         private System.Windows.Forms.Label lblProject;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem dateiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bearbeitenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem stammdatenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hilfeToolStripMenuItem;
         private System.Windows.Forms.DataGridView reportsView;
         private System.Windows.Forms.Button btnNewReport;
+        private System.Windows.Forms.ToolStripMenuItem dateiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem beendenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem permissionMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stammdatenMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem infoMenuItem;
+        private System.Windows.Forms.ComboBox cbTasks;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn activity;
