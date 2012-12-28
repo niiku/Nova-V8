@@ -299,10 +299,4 @@ INSERT INTO `novav8`.`Permission` (`id`, `component`, `profile`) VALUES (NULL, 8
 
 COMMIT;
 
-DROP USER novav8;
-
-CREATE USER novav8 IDENTIFIED BY 'novav8';
-
-USE novav8;
-
-GRANT ALL ON novav8.* TO novav8;
+GRANT ALL ON novav8.* TO novav8 IDENTIFIED BY 'novav8';
